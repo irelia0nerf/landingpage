@@ -1,0 +1,45 @@
+{
+  "name": "company-landing-page",
+  "version": "1.0.0",
+  "description": "A landing page for a company showcasing its services and features.",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "set NODE_OPTIONS=--openssl-legacy-provider && react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "keywords": [
+    "react",
+    "landing-page",
+    "company"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "dependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-scripts": "4.0.3"
+  },
+  "devDependencies": {},
+  "homepage": "http://yourcompany.com",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yourusername/company-landing-page.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yourusername/company-landing-page/issues"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

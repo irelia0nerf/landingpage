@@ -1,0 +1,290 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+  background: #f6f7f9;
+  color: #1a1a1a;
+  line-height: 1.6;
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+h1, h2, h3 {
+  margin: 0;
+  padding: 0;
+  font-weight: 700;
+  letter-spacing: -1px;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.header {
+  width: 100%;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  position: fixed;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 48px;
+  height: 64px;
+}
+
+@media (max-width: 700px) {
+  .header {
+    padding: 0 16px;
+  }
+}
+
+.section {
+  max-width: 900px;
+  margin: 64px auto 48px auto;
+  padding: 0 16px;
+}
+
+.hero-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+  background: linear-gradient(90deg, #f6f7f9 60%, #e9eaf0 100%);
+  border-radius: 24px;
+  margin: 48px 0 64px 0;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.04);
+  padding: 64px 24px;
+  text-align: center;
+}
+
+.hero-section h1 {
+  font-size: 2.8rem;
+  margin-bottom: 18px;
+}
+
+.hero-section p {
+  font-size: 1.25rem;
+  color: #444;
+  margin-bottom: 32px;
+}
+
+.cta-button,
+.contact-form button {
+  background: #222;
+  color: #fff;
+  border: none;
+  padding: 10px 40px;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+
+}
+
+.cta-button:hover,
+.contact-form button:hover {
+  background: #444;
+}
+
+/* BENEFÍCIOS */
+.features-list {
+  display: flex;
+  gap: 32px;
+  justify-content: center;
+  align-items: stretch;
+  margin-top: 32px;
+  flex-wrap: nowrap;
+  width: 100%;
+  padding: 0;
+}
+
+.feature-item {
+  background: #fff;
+  padding: 32px 24px;
+  border-radius: 16px;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.06);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 220px;
+  max-width: 300px;
+  width: 100%;
+  text-align: center;
+  transition: box-shadow 0.2s;
+  margin: 0 8px 24px 8px;
+}
+
+.feature-item:hover {
+  box-shadow: 0 6px 24px rgba(0,0,0,0.10);
+}
+
+@media (max-width: 700px) {
+  .features-list {
+    flex-direction: column;
+    gap: 16px;
+    align-items: center;
+  }
+  .feature-item {
+    max-width: 95vw;
+    margin: 0 0 16px 0;
+  }
+}
+
+/* COMO FUNCIONA */
+.how-it-works-card,
+.demo-area-card,
+.contact-form,
+.social-proof-card,
+.testimonial-item {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.06);
+  padding: 32px 24px;
+  margin-bottom: 32px;
+}
+
+.how-it-works-card p {
+  font-size: 1.15rem;
+  color: #444;
+  margin-top: 18px;
+  line-height: 1.7;
+  text-align: center;
+}
+
+/* DEMO AREA */
+.demo-area-card {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.demo-video-placeholder iframe {
+  border-radius: 12px;
+  margin: 24px 0;
+  max-width: 100%;
+  width: 420px;
+  height: 236px;
+  background: #000;
+}
+
+@media (max-width: 700px) {
+  .demo-video-placeholder iframe {
+    width: 90vw;
+    height: 50vw;
+    min-height: 180px;
+  }
+}
+
+/* SOCIAL PROOF */
+.social-proof-cards {
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+  flex-wrap: nowrap;
+  margin-top: 32px;
+}
+
+.social-proof-card {
+  display: flex;
+  align-items: center;
+  min-width: 260px;
+  max-width: 320px;
+  gap: 16px;
+  padding: 20px 18px;
+}
+
+.social-proof-img {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  border-radius: 8px;
+  background: #f3f4f6;
+}
+
+.social-proof-text {
+  font-size: 1rem;
+  color: #222;
+  margin: 0 0 6px 0;
+}
+
+.social-proof-company {
+  color: #888;
+  font-size: 0.95rem;
+}
+
+@media (max-width: 900px) {
+  .social-proof-cards {
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 700px) {
+  .social-proof-cards {
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+  }
+  .social-proof-card {
+    width: 100%;
+    max-width: 95vw;
+    min-width: 0;
+  }
+  .feature-item {
+    min-width: 0;
+  }
+}
+
+/* FORMULÁRIO */
+.contact-form {
+  max-width: 500px;
+  margin: 0 auto 64px auto;
+  text-align: center;
+}
+
+.contact-form h2 {
+  margin-bottom: 24px;
+}
+
+.contact-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 10px 12px;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-family: inherit;
+  background: #f9fafb;
+  resize: none;
+  width: 100%;
+}
+
+/* FOOTER */
+footer {
+  background: #fff;
+  color: #888;
+  text-align: center;
+  padding: 24px 0 16px 0;
+  font-size: 1rem;
+  border-top: 1px solid #ececec;
+  margin-top: 48px;
+}
