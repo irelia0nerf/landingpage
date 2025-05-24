@@ -9,10 +9,14 @@ import Footer from './components/Footer';
 import './styles/main.css';
 import ValueSection from './components/ValueSection';
 import PartnersCarousel from './components/PartnersCarousel';
-// ...
+
+import Documentos from "./components/Documentos";
+import Missao from "./components/Missao";
+import FounderCard from './components/FounderCard';
+// ...a a
 
 
-
+//
 
 
 const App = () => {
@@ -21,11 +25,13 @@ const App = () => {
       <Header />
       <Headline />
       <PartnersCarousel />
-      <Benefits />
-      <HowItWorks />
-      <DemoArea />
+{ /*  <Benefits />  */ }
       <ValueSection />
-      <CTA />
+      <Documentos />
+{ /*      <HowItWorks />
+      <DemoArea /> */ }
+      <FounderCard />
+{ /*      <CTA /> */ }
       <Footer />
     </div>
   );

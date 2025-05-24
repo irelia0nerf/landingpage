@@ -21,10 +21,9 @@ const metrics = [
 const ValueSection = () => (
   <section className="value-section">
     <div className="value-headline">
-      <h2>The value of<br />one platform</h2>
+      <h2>Nossa missão</h2>
       <p>
-        Consolidate vendors, maximize your ROI, and streamline business operations.<br />
-        See why Fortune 500 companies choose nossa plataforma over other risk vendors.
+        A missão da FoundLab é proteger e impulsionar instituições financeiras que operam na fronteira entre TradFi e Web3, oferecendo infraestrutura de reputação e risco em tempo real. Fornecemos o ScoreLab, motor de reputação híbrida e auditável, que integra dados on-chain, off-chain e comportamento transacional para análises precisas e adaptativas. Atendemos fintechs, bancos digitais e protocolos DeFi que precisam escalar com segurança, mitigar riscos e manter confiança em um ambiente financeiro cada vez mais complexo e exponencial. 
       </p>
     </div>
     <div className="value-metrics">
@@ -39,3 +38,5 @@ const ValueSection = () => (
 );
 
 export default ValueSection;
+
+ // DEIXAR A MISSÃO MAIS SIMPLES, TRAZER ALGUNS NUMERO SE POSSIVEL

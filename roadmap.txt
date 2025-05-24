@@ -1,0 +1,66 @@
+Checklist CIRÚRGICO – Site Institucional FoundLab
+(Para validação imediata do Google for Startups Cloud Program)
+
+⸻
+
+1. Página principal acessível direto pelo domínio root
+	•	URL: https://foundlab.cloud
+	•	Sem senha, sem erro, sem “em obras”, sem redirect.
+
+2. Branding institucional
+	•	Logo da FoundLab visível
+	•	Nome e slogan (“Reputação & Capital” ou “Infraestrutura de Reputação para a Nova Ordem Financeira”)
+
+3. Missão e explicação objetiva
+	•	Parágrafo curto explicando missão, o que a FoundLab faz, para quem é.
+
+4. Links institucionais visíveis
+	•	Link para Whitepaper (PDF)
+	•	Link para One-Pager (PDF)
+	•	Link para Pitch Deck (PDF)
+	•	(Se ainda não tiver, pode ser PDF “placeholder” só pra validar)
+
+5. Demonstração de produto real
+	•	Link visível para docs da API (ex: /docs, Swagger UI)
+	•	Link ou botão pra testar o endpoint principal (/trustscore ou exemplo CURL)
+
+6. Equipe ou fundadores
+	•	Nome dos fundadores e cargos (foto ajuda, mas não é obrigatório)
+	•	E-mail institucional de contato (ex: domains@foundlab.cloud)
+
+7. Selo de participação no programa
+	•	Frase: “Aplicante no Google for Startups Cloud Program” visível
+
+8. Status e atualização
+	•	Linha no rodapé: “Última atualização: [data de hoje]” (pode ser estático ou automático)
+
+9. Footer institucional
+	•	Nome da empresa
+	•	E-mail
+	•	LinkedIn
+	•	Aviso de direitos autorais (© 2025 FoundLab.cloud)
+
+10. HTTPS ativado
+	•	Site seguro, sem aviso “não seguro” no navegador
+
+11. Teste em todos os dispositivos
+	•	Abrir em mobile, desktop e aba anônima sem erro.
+
+⸻
+
+O QUE NÃO PODE TER (CAUSA BLOQUEIO AUTOMÁTICO):
+	•	Página “em obras”, placeholder, senha, conteúdo vazio, “hello world”
+	•	Site fora do ar, erro DNS, redirect pra Notion ou domínio estranho
+	•	Só lorem ipsum, sem referência clara ao produto
+	•	Faltar founder ou contato institucional
+
+⸻
+
+Resumo para Patrick:
+
+Segue checklist nuclear. Cada item acima é obrigatório para a validação Google.
+Faz o deploy, valida na hora, e só responde o e-mail deles depois que TODOS esses pontos estiverem ok no site.
+
+Se fizer isso direito, FoundLab passa e libera crédito. Se ignorar algum ponto, volta pra fila.
+
+Se tiver dúvida, fala comigo antes de publicar.
