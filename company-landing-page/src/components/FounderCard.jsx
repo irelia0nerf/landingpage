@@ -24,14 +24,17 @@ const FounderCard = () => {
       <div className={`founder-card ${show ? "fade-in" : ""}`}>
         <div className="founder-info">
           <div className="founder-name">Alex Bolson</div>
-          <div className="founder-role">Founder</div>
-        </div>
+          <div className="founder-role">Founder & CEO</div>
+
+            <div className="founder-desc">Alex é o fundador e CEO da FoundLab, com mais de 10 anos de experiência em tecnologia e inovação.</div>
+            </div>
       </div>
 
         <div className={`founder-card ${show ? "fade-in" : ""}`}>
         <div className="founder-info">
           <div className="founder-name">Fernanda Stumpf</div>
           <div className="founder-role">Diretora</div>
+          <div className="founder-desc">Alex é o fundador e CEO da FoundLab, com mais de 10 anos de experiência em tecnologia e inovação.</div>
         </div>
       </div>
 
@@ -39,6 +42,7 @@ const FounderCard = () => {
         <div className="founder-info">
           <div className="founder-name">Rafael Bado</div>
           <div className="founder-role">Founder</div>
+          <div className="founder-desc">Alex é o fundador e CEO da FoundLab, com mais de 10 anos de experiência em tecnologia e inovação.</div>
         </div>
       </div>
 
@@ -46,6 +50,7 @@ const FounderCard = () => {
         <div className="founder-info">
           <div className="founder-name">Patrick Stegaribe</div>
           <div className="founder-role">Desenvolvimento</div>
+          <div className="founder-desc">Alex é o fundador e CEO da FoundLab, com mais de 10 anos de experiência em tecnologia e inovação.</div>
         </div>
       </div>
     </section>

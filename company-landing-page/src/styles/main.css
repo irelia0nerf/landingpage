@@ -549,10 +549,11 @@ a:hover {
 /* ========== FOUNDER CARD ========== */
 .founder-section {
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
   min-height: 260px;
   margin: 60px 0 40px 0;
+  flex-wrap: wrap;
 }
 .founder-card {
   display: flex;
