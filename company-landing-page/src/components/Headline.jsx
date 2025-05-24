@@ -3,8 +3,8 @@ import React from 'react';
 const Headline = () => (
   <section className="hero-section">
     <h1>
-      Sua reputação financeira,<br />
-      <span className="highlight">em tempo real.</span>
+      FoundLab<br />
+      <span className="highlight">inteligência que ....... a nova ordem financeira</span>
     </h1>
     <p className="subtitle">
       Descubra seu score, acompanhe seu histórico e tome decisões melhores.<br />

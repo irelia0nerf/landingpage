@@ -15,7 +15,7 @@ const allPartners = [...partners, ...partners];
 const PartnersCarousel = () => (
   <section className="partners-section">
     <div className="partners-headline">
-      TRUSTED BY INDUSTRY LEADERS
+      NOSSOS PARCEIROS
     </div>
     <div className="partners-carousel-outer">
       <div className="partners-carousel-track">

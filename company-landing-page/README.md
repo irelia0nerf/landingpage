@@ -56,7 +56,7 @@ O site estará disponível em [http://localhost:3000](http://localhost:3000).
 
 ---
 
-## ✨ Funcionalidades
+##  Funcionalidades
 
 - Layout responsivo (desktop e mobile)
 - Header fixo com logo e botão de demo
