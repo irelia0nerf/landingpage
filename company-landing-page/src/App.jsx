@@ -25,13 +25,8 @@ const App = () => {
       <Header />
       <Headline />
       <PartnersCarousel />
-{ /*  <Benefits />  */ }
       <ValueSection />
-      <Documentos />
-{ /*      <HowItWorks />
-      <DemoArea /> */ }
       <FounderCard />
-{ /*      <CTA /> */ }
       <Footer />
     </div>
   );
