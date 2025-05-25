@@ -49,7 +49,7 @@ const FounderCard = () => {
 
   return (
     <section className="founders-wrapper" ref={ref}>
-      <h2 className="founders-title">Membros</h2>
+      <h2 className="founders-title">EQUIPE</h2>
       <div className="founders-grid">
         <div className="founders-top">
           <div className={`founder-card${show ? " fade-in" : ""}`}>

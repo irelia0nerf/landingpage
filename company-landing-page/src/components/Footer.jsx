@@ -8,9 +8,9 @@ const lastUpdate = today.toLocaleDateString("pt-BR", {
 });
 
 const documentos = [
-  { name: "Política de Privacidade", url: "/docs/politica-de-privacidade.pdf" },
-  { name: "Termos de Uso", url: "/docs/termos-de-uso.pdf" },
-  { name: "Compliance", url: "/docs/compliance.pdf" },
+  { name: "Whitepaper", url: "/docs/politica-de-privacidade.pdf" },
+  { name: "One-Pager", url: "/docs/termos-de-uso.pdf" },
+  { name: "Pitch Deck", url: "/docs/compliance.pdf" },
 ];
 
 const Footer = () => (
