@@ -1,13 +1,26 @@
 import React from 'react';
-import logo1 from '../images/logo1.png';
+import parceiro1 from '../images/parceiro1.png';
+import parceiro2 from '../images/parceiro2.png';
+import parceiro3 from '../images/parceiro3.png';
+import parceiro4 from '../images/parceiro4.png';
+import parceiro5 from '../images/parceiro5.png';
+import parceiro6 from '../images/parceiro6.png';
+import parceiro7 from '../images/parceiro7.png';
+import parceiro8 from '../images/parceiro8.png';
+import parceiro9 from '../images/parceiro9.png';
 
 // Exemplo de array de logos (adicione o path dos seus SVGs/pngs)
 const partners = [
-  { name: "RMK", img: logo1 },
-  { name: "Caliber Home Loans", img: logo1 },
-  { name: "Pennymac", img: logo1 },
-  { name: "Fairway", img: logo1 },
-  { name: "Horizon Bank", img: logo1 },
+  { name: "Supabase", img: parceiro1 },
+  { name: "Google Cloud", img: parceiro2 },
+  { name: "Stripe", img: parceiro3 },
+  { name: "AWS", img: parceiro4 },
+  { name: "Chainlink", img: parceiro5 },
+  { name: "GitHub", img: parceiro6 },
+  { name: "Vercel", img: parceiro7 },
+  { name: "Banco Open", img: parceiro8 },
+  { name: "Polygon", img: parceiro9 },
+
 ];
 
 const allPartners = [...partners, ...partners];

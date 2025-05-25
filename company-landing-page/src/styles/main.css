@@ -476,8 +476,8 @@ a:hover {
   justify-content: center;
 }
 .partner-logo img {
-  max-height: 38px;
-  max-width: 120px;
+  max-height: 120px;
+  max-width: 150px;
   object-fit: contain;
   filter: grayscale(1);
   opacity: 0.85;
@@ -490,7 +490,7 @@ a:hover {
 @media (max-width: 900px) {
   .partners-carousel-track { gap: 36px; animation-duration: 13s; min-width: 1000px;}
   .partner-logo { min-width: 78px; max-width: 130px; height: 36px; }
-  .partner-logo img { max-height: 24px; }
+  .partner-logo img { max-height: 80px; }
 }
 @media (max-width: 600px) {
   .partners-section { padding: 0 2vw; margin: 24px auto 18px auto; }
@@ -498,7 +498,7 @@ a:hover {
   .partners-carousel-outer { padding: 3px 0; }
   .partners-carousel-track { gap: 20px; animation-duration: 8s; min-width: 600px;}
   .partner-logo { min-width: 38px; max-width: 64px; height: 16px;}
-  .partner-logo img { max-height: 12px; }
+  .partner-logo img { max-height: 40px; }
 }
 
 /* ========== MISSÃO ========== */
