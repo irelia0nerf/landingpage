@@ -13,6 +13,7 @@ import PartnersCarousel from './components/PartnersCarousel';
 import Documentos from "./components/Documentos";
 import Missao from "./components/Missao";
 import FounderCard from './components/FounderCard';
+import Prova from './components/Prova';
 // ...a a
 
 
@@ -26,6 +27,7 @@ const App = () => {
       <Headline />
       <PartnersCarousel />
       <ValueSection />
+      <Prova />
       <FounderCard />
       <Footer />
     </div>
