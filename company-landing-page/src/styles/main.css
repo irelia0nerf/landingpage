@@ -1,13 +1,26 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
+/* ========== CORES DARK THEME ========== */
+:root {
+  --dark-bg: #0D1117; /* Um preto azulado, similar ao GitHub Dark */
+  --dark-bg-card: #161B22; /* Um pouco mais claro para cards */
+  --dark-bg-header-footer: #101419; /* Intermediário para header/footer */
+  --text-primary-dark: #E6EDF3; /* Cinza claro para texto principal */
+  --text-secondary-dark: #8B949E; /* Cinza mais escuro para texto secundário */
+  --accent-color: #22D3EE; /* Ciano vibrante (similar ao exemplo) */
+  --accent-color-hover: #16A0B0; /* Ciano mais escuro para hover */
+  --border-color-dark: #30363D; /* Cor para bordas sutis */
+  --text-on-accent: #0D1117; /* Texto escuro para botões com fundo accent */
+}
+
 /* ========== RESET & BASE ========== */
 *, *::before, *::after { box-sizing: border-box; }
 
 html, body {
   margin: 0;
   font-family: 'Montserrat', Arial, sans-serif;
-  background: #f6f7f9;
-  color: #1a1a1a;
+  background: var(--dark-bg); /* ALTERADO */
+  color: var(--text-primary-dark); /* ALTERADO */
   line-height: 1.6;
   max-width: 100vw;
   overflow-x: hidden;
@@ -18,26 +31,27 @@ h1, h2, h3 {
   padding: 0;
   font-weight: 700;
   letter-spacing: -1px;
+  /* A cor será herdada do body ou especificada abaixo */
 }
 h1 .highlight, h2 .highlight, h3 .highlight,
 .highlight {
-  color: #2962ff;
+  color: var(--accent-color); /* ALTERADO */
 }
 
 /* Links e Botões principais */
 a {
-  color: #2962ff;
+  color: var(--accent-color); /* ALTERADO */
   text-decoration: none;
   font-weight: 600;
   transition: color 0.18s;
   outline: none;
 }
 a:hover {
-  color: #174ea6;
+  color: var(--accent-color-hover); /* ALTERADO */
 }
 .cta-btn, .cta-button, .contact-form button {
-  background: #2962ff;
-  color: #fff;
+  background: var(--accent-color); /* ALTERADO */
+  color: var(--text-on-accent); /* ALTERADO - para contraste no botão */
   padding: 0.95rem 2.1rem;
   font-size: 1.13rem;
   font-weight: 600;
@@ -45,20 +59,21 @@ a:hover {
   border-radius: 0.7rem;
   cursor: pointer;
   transition: background 0.18s, color 0.18s, box-shadow 0.18s;
-  box-shadow: 0 4px 18px rgba(41,98,255,0.09);
+  /* Sombra sutil com a cor de destaque ou mais escura */
+  box-shadow: 0 4px 18px rgba(34, 211, 238, 0.15); /* ALTERADO */
   margin-top: 0.2rem;
 }
 .cta-btn:hover, .cta-button:hover, .contact-form button:hover {
-  background: #174ea6;
-  color: #fff;
-  box-shadow: 0 6px 32px rgba(41,98,255,0.14);
+  background: var(--accent-color-hover); /* ALTERADO */
+  color: var(--text-on-accent); /* ALTERADO */
+  box-shadow: 0 6px 32px rgba(34, 211, 238, 0.25); /* ALTERADO */
 }
 
 /* ========== HEADER ========== */
 .header {
   width: 100%;
-  background: #fff;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  background: var(--dark-bg-header-footer); /* ALTERADO */
+  box-shadow: 0 2px 8px rgba(0,0,0,0.25); /* ALTERADO */
   position: fixed;
   top: 0;
   z-index: 10;
@@ -66,8 +81,8 @@ a:hover {
   align-items: center;
   justify-content: space-between;
   padding: 0 48px;
-  height: 68px; /* aumentado para acomodar logo maior */
-  border-bottom: 2px solid #e6eeff;
+  height: 68px;
+  border-bottom: 2px solid var(--border-color-dark); /* ALTERADO */
 }
 .logo-container, .logo-link {
   display: flex;
@@ -79,11 +94,12 @@ a:hover {
   width: auto;
   max-height: 54px;
   object-fit: contain;
+  /* Se o logo for escuro, pode precisar de um filtro para branco: filter: brightness(0) invert(1); */
 }
 .logo-text {
   font-weight: 700;
   font-size: 26px;
-  color: #2962ff;
+  color: var(--accent-color); /* ALTERADO */
   letter-spacing: -1px;
   margin-left: 10px;
   user-select: none;
@@ -102,25 +118,26 @@ a:hover {
   align-items: flex-start;
   justify-content: center;
   min-height: 65vh;
-  background: linear-gradient(90deg, #f6f7f9 85%, #e3edff 100%);
+  /* Exemplo de gradiente escuro, ajuste conforme necessário */
+  background: linear-gradient(90deg, var(--dark-bg) 85%, #101827 100%); /* ALTERADO */
   border-radius: 24px;
   margin: 48px 0 64px 0;
-  box-shadow: 0 4px 24px rgba(41,98,255,0.08);
+  box-shadow: 0 4px 24px rgba(0,0,0,0.2); /* ALTERADO */
   padding: 80px 36px 80px 64px;
   text-align: left;
-  border-left: 8px solid #2962ff1a;
+  border-left: 8px solid rgba(34, 211, 238, 0.2); /* ALTERADO - accent com alpha */
 }
 .hero-section h1 {
   font-size: 3rem;
   line-height: 1.05;
   font-weight: 700;
-  color: #1a1a1a;
+  color: var(--text-primary-dark); /* ALTERADO */
   margin-bottom: 1.1rem;
   letter-spacing: -1px;
 }
 .hero-section .subtitle {
   font-size: 1.22rem;
-  color: #39649a;
+  color: var(--text-secondary-dark); /* ALTERADO */
   margin-bottom: 2.3rem;
   font-weight: 400;
   max-width: 600px;
@@ -139,25 +156,25 @@ a:hover {
   padding: 0 24px;
 }
 .benefits-suite {
-  color: #2962ff;
+  color: var(--accent-color); /* ALTERADO */
   font-size: 0.96rem;
   font-weight: 600;
   letter-spacing: 0.09em;
   text-transform: uppercase;
   margin-bottom: 14px;
   display: inline-block;
-  opacity: 0.72;
+  opacity: 0.8; /* Ajustado para melhor leitura */
 }
 .benefits-title {
   font-size: 2.6rem;
   font-weight: 700;
   margin: 0 0 18px 0;
-  color: #161c24;
+  color: var(--text-primary-dark); /* ALTERADO */
   letter-spacing: -2px;
 }
 .benefits-desc {
   font-size: 1.18rem;
-  color: #3b4856;
+  color: var(--text-secondary-dark); /* ALTERADO */
   max-width: 680px;
   margin: 0 0 38px 0;
   line-height: 1.55;
@@ -169,23 +186,25 @@ a:hover {
   margin-top: 12px;
 }
 .benefit-card, .docs-card {
-  background: #f7fafd;
+  background: var(--dark-bg-card); /* ALTERADO */
   border-radius: 16px;
-  box-shadow: 0 2px 18px rgba(41,98,255,0.06);
+  box-shadow: 0 2px 18px rgba(0,0,0,0.2); /* ALTERADO */
   display: flex;
   align-items: center;
   gap: 18px;
   padding: 22px 28px;
-  transition: box-shadow 0.17s, transform 0.15s;
+  transition: box-shadow 0.17s, transform 0.15s, border-color 0.17s;
   cursor: pointer;
   min-height: 96px;
+  border: 1px solid transparent; /* Para transição suave da borda no hover */
 }
 .benefit-card:hover, .docs-card:hover {
-  box-shadow: 0 6px 32px rgba(41,98,255,0.15);
+  box-shadow: 0 6px 32px rgba(34, 211, 238, 0.15); /* ALTERADO - Sombra com accent */
   transform: translateY(-4px) scale(1.018);
+  border-color: var(--accent-color); /* Adiciona borda no hover */
 }
 .benefit-icon, .docs-icon {
-  background: #e8f0fe;
+  background: rgba(34, 211, 238, 0.1); /* ALTERADO - Fundo levemente accent */
   border-radius: 12px;
   padding: 8px;
   display: flex;
@@ -194,17 +213,23 @@ a:hover {
   min-width: 44px;
   min-height: 44px;
   margin-right: 8px;
+  /* Ícones SVG podem precisar de cor alterada aqui ou no HTML */
+  /* Ex: fill: var(--accent-color); */
+}
+/* Se os ícones forem imagens ou SVGs que precisam mudar de cor: */
+.benefit-icon svg, .docs-icon svg {
+  fill: var(--accent-color); /* Exemplo se for SVG */
 }
 .benefit-info, .docs-info { flex: 1 1 auto; }
 .benefit-title, .docs-name {
   font-size: 1.04rem;
   font-weight: 600;
-  color: #1a1a1a;
+  color: var(--text-primary-dark); /* ALTERADO */
   margin-bottom: 4px;
 }
 .benefit-subtitle, .docs-desc-small {
   font-size: 1rem;
-  color: #405375;
+  color: var(--text-secondary-dark); /* ALTERADO */
   opacity: 0.93;
   line-height: 1.25;
 }
@@ -212,12 +237,15 @@ a:hover {
   margin-left: 10px;
   display: flex;
   align-items: center;
-  opacity: 0.55;
+  opacity: 0.7; /* Ajustado */
   transition: opacity 0.18s;
+  /* Se a seta for um SVG, pode precisar mudar a cor */
+  /* Ex: fill: var(--text-secondary-dark); */
 }
 .benefit-card:hover .benefit-arrow,
 .docs-card:hover .docs-arrow {
   opacity: 1;
+  /* Ex: fill: var(--accent-color); */
 }
 @media (max-width: 900px) {
   .benefits-grid, .docs-grid { grid-template-columns: repeat(2, 1fr); gap: 24px 24px; }
@@ -240,13 +268,13 @@ a:hover {
   font-size: 2.6rem;
   font-weight: 700;
   margin: 0 0 18px 0;
-  color: #161c24;
+  color: var(--text-primary-dark); /* ALTERADO */
   letter-spacing: -2px;
   text-align: left;
 }
 .docs-desc {
   font-size: 1.18rem;
-  color: #3b4856;
+  color: var(--text-secondary-dark); /* ALTERADO */
   max-width: 680px;
   margin: 0 0 38px 0;
   line-height: 1.55;
@@ -286,7 +314,6 @@ a:hover {
 
 
 /* ========== VALORES & METRICAS ========== */
-/* ========== VALORES & METRICAS ========== */
 .value-section {
   max-width: 1100px;
   margin: 0 auto 64px auto;
@@ -295,7 +322,6 @@ a:hover {
   flex-direction: column;
 }
 
-/* HEADLINE: tudo centralizado */
 .value-headline {
   display: flex;
   flex-direction: column;
@@ -308,32 +334,31 @@ a:hover {
 .value-headline h2 {
   font-size: 2.5rem;
   font-weight: 700;
-  margin: 0 0 8px 0;     /* margin entre titulo e texto */
-  color: #1a1a1a;
+  margin: 0 0 8px 0;
+  color: var(--text-primary-dark); /* ALTERADO */
   letter-spacing: -1px;
   min-width: 0;
   width: 100%;
-  text-align: center;     /* Centraliza o título */
+  text-align: center;
 }
 
 .value-headline p {
-  color: #29304a;
+  color: var(--text-secondary-dark); /* ALTERADO */
   font-size: 1.15rem;
-  width: 100%;           /* Ocupa 100% */
-  max-width: 100%;       /* Sem limite */
+  width: 100%;
+  max-width: 100%;
   margin: 0;
   line-height: 1.55;
-  text-align: justify;   /* Justifica o texto */
+  text-align: justify;
   align-self: center;
 }
 
-/* ----- METRICAS: DESKTOP (default, 3+ itens em linha) ----- */
 .value-metrics {
   display: flex;
   gap: 32px;
   justify-content: flex-start;
   align-items: flex-end;
-  border-top: 1.5px solid #e6eeff;
+  border-top: 1.5px solid var(--border-color-dark); /* ALTERADO */
   margin-top: 24px;
   padding-top: 36px;
   flex-wrap: wrap;
@@ -348,7 +373,7 @@ a:hover {
 }
 .metric-label {
   font-size: 1.15rem;
-  color: #29304a;
+  color: var(--text-secondary-dark); /* ALTERADO */
   font-weight: 500;
   margin-bottom: 18px;
   letter-spacing: 0;
@@ -357,77 +382,36 @@ a:hover {
   font-size: 2.7rem;
   font-weight: 700;
   letter-spacing: -2px;
-  color: #2962ff;
+  color: var(--accent-color); /* ALTERADO */
   margin-bottom: 8px;
   line-height: 1;
 }
 
-/* ----- TABLET (<=900px): Empilha e centraliza ----- */
 @media (max-width: 900px) {
-  .value-headline {
-    gap: 20px;
-  }
-  .value-headline h2 {
-    font-size: 1.5rem;
-    margin: 0 0 8px 0;
-  }
-  .value-headline p {
-    font-size: 1rem;
-    width: 100%;
-    max-width: 100%;
-    text-align: justify;
-  }
-  .value-metrics {
-    flex-direction: column;
-    gap: 18px;
-    padding-top: 22px;
-    align-items: stretch;
-  }
-  .metric-item {
-    min-width: 0;
-    align-items: center;
-    text-align: left;
-    margin-bottom: 10px;
-  }
+  .value-headline { gap: 20px; }
+  .value-headline h2 { font-size: 1.5rem; margin: 0 0 8px 0; }
+  .value-headline p { font-size: 1rem; }
+  .value-metrics { flex-direction: column; gap: 18px; padding-top: 22px; align-items: stretch; }
+  .metric-item { min-width: 0; align-items: center; text-align: left; margin-bottom: 10px; }
 }
 
-/* ----- MOBILE (<=600px): Grid 2xN, centralizado ----- */
 @media (max-width: 600px) {
-  .value-section {
-    padding: 0 6px;
-  }
-  .value-headline {
-    gap: 14px;
-  }
-  .value-headline h2 {
-    font-size: 1.2rem;
-  }
-  .value-headline p {
-    font-size: 0.99rem;
-    width: 100%;
-    max-width: 100%;
-    text-align: justify;
-  }
+  .value-section { padding: 0 6px; }
+  .value-headline { gap: 14px; }
+  .value-headline h2 { font-size: 1.2rem; }
+  .value-headline p { font-size: 0.99rem; }
   .value-metrics {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 18px 8px;
     padding-top: 14px;
-    border-top: 1.5px solid #e6eeff;
+    border-top: 1.5px solid var(--border-color-dark); /* ALTERADO */
     margin-top: 18px;
     justify-items: center;
   }
-  .metric-item {
-    min-width: 0;
-    align-items: center;
-    text-align: center;
-    margin-bottom: 0;
-  }
+  .metric-item { min-width: 0; align-items: center; text-align: center; margin-bottom: 0; }
   .metric-label,
-  .metric-value {
-    font-size: 1rem;
-    margin-bottom: 6px;
-  }
+  .metric-value { font-size: 1rem; margin-bottom: 6px; }
 }
 
 
@@ -442,9 +426,10 @@ a:hover {
   font-size: 1.05rem;
   letter-spacing: 2.2px;
   font-weight: 700;
-  color: #2962ff;
+  color: var(--accent-color); /* ALTERADO */
   margin-bottom: 30px;
   text-transform: uppercase;
+  opacity: 0.8;
 }
 .partners-carousel-outer {
   width: 100%;
@@ -465,8 +450,8 @@ a:hover {
   100% { transform: translateX(-50%); }
 }
 .partner-logo {
-  opacity: 0.55;
-  filter: grayscale(1);
+  opacity: 0.6; /* Aumentei um pouco a opacidade base */
+  filter: grayscale(1) brightness(1.5); /* Adicionado brilho para logos escuras */
   transition: opacity 0.2s, filter 0.2s;
   height: 54px;
   min-width: 120px;
@@ -479,14 +464,19 @@ a:hover {
   max-height: 120px;
   max-width: 150px;
   object-fit: contain;
-  filter: grayscale(1);
-  opacity: 0.85;
+  /* O filter do pai já deve ser suficiente, mas pode precisar de ajustes */
+  /* filter: grayscale(1) brightness(1.5); */ /* Testar se precisa aqui também */
+  /* opacity: 0.85; */ /* Controlado pelo pai */
   transition: opacity 0.2s, filter 0.2s;
 }
-.partner-logo:hover img {
+.partner-logo:hover { /* ALTERADO hover state */
   opacity: 1;
-  filter: grayscale(0.3);
+  filter: grayscale(0) brightness(1); /* Remove grayscale, normaliza brilho */
 }
+/* .partner-logo:hover img {
+  opacity: 1;
+  filter: grayscale(0) brightness(1);
+} */
 @media (max-width: 900px) {
   .partners-carousel-track { gap: 36px; animation-duration: 13s; min-width: 1000px;}
   .partner-logo { min-width: 78px; max-width: 130px; height: 36px; }
@@ -505,38 +495,38 @@ a:hover {
 .missao-section {
   max-width: 880px;
   margin: 56px auto 0 auto;
-  padding: 0 22px;
-  background: #f7fafd;
+  padding: 22px; /* Ajustado o padding */
+  background: var(--dark-bg-card); /* ALTERADO */
   border-radius: 18px;
-  box-shadow: 0 2px 18px rgba(41,98,255,0.06);
+  box-shadow: 0 2px 18px rgba(0,0,0,0.2); /* ALTERADO */
   text-align: left;
 }
 .missao-suite {
-  color: #2962ff;
+  color: var(--accent-color); /* ALTERADO */
   font-size: 0.98rem;
   font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   margin-bottom: 14px;
   display: inline-block;
-  opacity: 0.72;
+  opacity: 0.8; /* Ajustado */
 }
 .missao-title {
   font-size: 2.2rem;
   font-weight: 700;
   margin: 0 0 15px 0;
-  color: #161c24;
+  color: var(--text-primary-dark); /* ALTERADO */
   letter-spacing: -1px;
 }
 .missao-desc {
   font-size: 1.20rem;
-  color: #2c3142;
+  color: var(--text-secondary-dark); /* ALTERADO */
   margin: 0 0 8px 0;
   line-height: 1.65;
   max-width: 680px;
 }
 .missao-highlight {
-  color: #2962ff;
+  color: var(--accent-color); /* ALTERADO */
   font-weight: 600;
   font-size: 1.1em;
   display: inline-block;
@@ -544,7 +534,6 @@ a:hover {
 }
 
 /* ========== FOUNDER CARD ========== */
-/* === FOUNDER GRID LAYOUT === */
 .founders-wrapper {
   max-width: 1100px;
   margin: 70px auto 64px auto;
@@ -554,7 +543,7 @@ a:hover {
 .founders-title {
   font-size: 2.4rem;
   font-weight: 700;
-  color: #161c24;
+  color: var(--text-primary-dark); /* ALTERADO */
   margin-bottom: 28px;
   text-align: center;
   letter-spacing: -2px;
@@ -583,9 +572,9 @@ a:hover {
 }
 
 .founder-card {
-  background: #f7fafd;
+  background: var(--dark-bg-card); /* ALTERADO */
   border-radius: 20px;
-  box-shadow: 0 2px 18px rgba(41,98,255,0.06);
+  box-shadow: 0 2px 18px rgba(0,0,0,0.2); /* ALTERADO */
   padding: 32px 28px;
   min-width: 210px;
   max-width: 350px;
@@ -594,7 +583,12 @@ a:hover {
   align-items: flex-start;
   opacity: 0;
   transform: translateY(30px);
-  transition: opacity 1.2s cubic-bezier(.42,.86,.56,1.02), transform 1.2s cubic-bezier(.42,.86,.56,1.02);
+  transition: opacity 1.2s cubic-bezier(.42,.86,.56,1.02), transform 1.2s cubic-bezier(.42,.86,.56,1.02), border-color 0.2s;
+  border: 1px solid transparent;
+}
+.founder-card:hover {
+    border-color: var(--accent-color); /* Borda no hover */
+    box-shadow: 0 6px 32px rgba(34, 211, 238, 0.1);
 }
 .founder-card.fade-in {
   opacity: 1;
@@ -608,16 +602,16 @@ a:hover {
 .founder-name {
   font-size: 1.17rem;
   font-weight: 700;
-  color: #161c24;
+  color: var(--text-primary-dark); /* ALTERADO */
 }
 .founder-role {
   font-size: 1.07rem;
-  color: #2962ff;
+  color: var(--accent-color); /* ALTERADO */
   font-weight: 600;
 }
 .founder-desc {
   font-size: 1rem;
-  color: #2c3142;
+  color: var(--text-secondary-dark); /* ALTERADO */
   margin-top: 4px;
   line-height: 1.45;
 }
@@ -664,9 +658,9 @@ a:hover {
 
 /* ========== FOOTER ========== */
 .footer-main {
-  background: #fff;
-  color: #888;
-  border-top: 1px solid #ececec;
+  background: var(--dark-bg-header-footer); /* ALTERADO */
+  color: var(--text-secondary-dark); /* ALTERADO */
+  border-top: 1px solid var(--border-color-dark); /* ALTERADO */
   padding: 32px 0 16px 0;
   font-size: 1rem;
   margin-top: 56px;
@@ -693,7 +687,7 @@ a:hover {
 
 .footer-company {
   font-size: 1.16rem;
-  color: #2962ff;
+  color: var(--accent-color); /* ALTERADO */
   font-weight: 700;
   margin-bottom: 3px;
 }
@@ -701,7 +695,7 @@ a:hover {
 .footer-title {
   font-weight: 600;
   font-size: 1.09rem;
-  color: #29304a;
+  color: var(--text-primary-dark); /* ALTERADO */
   margin-bottom: 2px;
 }
 
@@ -713,7 +707,7 @@ a:hover {
 }
 
 .footer-link {
-  color: #2962ff;
+  color: var(--accent-color); /* ALTERADO */
   text-decoration: none;
   font-weight: 500;
   transition: color 0.16s;
@@ -722,7 +716,7 @@ a:hover {
 }
 
 .footer-link:hover {
-  color: #0039cb;
+  color: var(--accent-color-hover); /* ALTERADO */
   text-decoration: underline;
 }
 
@@ -737,24 +731,26 @@ a:hover {
 }
 
 .footer-update {
-  color: #aaa;
+  color: var(--text-secondary-dark); /* ALTERADO - um pouco mais claro que #aaa no fundo escuro */
+  opacity: 0.7;
   font-size: 0.97rem;
 }
 
 .footer-seal {
-  color: #2962ff;
-  background: #e8f0fe;
+  color: var(--text-on-accent); /* ALTERADO */
+  background: var(--accent-color); /* ALTERADO */
   border-radius: 10px;
   padding: 10px 20px;
   font-weight: 600;
   text-align: center;
-  box-shadow: 0 1px 8px rgba(41,98,255,0.07);
+  box-shadow: 0 1px 8px rgba(34, 211, 238, 0.1); /* ALTERADO */
   margin-top: 0;
   min-width: 220px;
 }
 
 .footer-bottom {
-  color: #bbb;
+  color: var(--text-secondary-dark); /* ALTERADO */
+  opacity: 0.8;
   font-size: 0.97rem;
   text-align: center;
   margin-top: 18px;
@@ -803,8 +799,6 @@ a:hover {
 }
 
 
-
-
 /* ========== PROVA ========== */
 
 .prova-section {
@@ -823,9 +817,10 @@ a:hover {
   aspect-ratio: 1 / 1;
   overflow: hidden;
   border-radius: 14px;
-  box-shadow: 0 1px 10px 0 rgba(41, 98, 255, 0.06);
-  background: #f5f8ff;
-  transition: transform 0.18s, box-shadow 0.18s;
+  box-shadow: 0 1px 10px 0 rgba(0,0,0, 0.2); /* ALTERADO */
+  background: var(--dark-bg-card); /* ALTERADO */
+  transition: transform 0.18s, box-shadow 0.18s, border-color 0.18s;
+  border: 1px solid transparent;
 }
 
 .prova-item img {
@@ -834,13 +829,19 @@ a:hover {
   object-fit: cover;
   display: block;
   transition: transform 0.22s;
+  opacity: 0.85; /* Ligeira opacidade para integrar melhor */
 }
+.prova-item:hover img {
+    opacity: 1;
+}
+
 
 /* HOVER só em DESKTOP */
 @media (hover: hover) and (pointer: fine) {
   .prova-item:hover {
     transform: translateY(-6px) scale(1.045);
-    box-shadow: 0 8px 32px rgba(41, 98, 255, 0.14);
+    box-shadow: 0 8px 32px rgba(34, 211, 238, 0.15); /* ALTERADO */
+    border-color: var(--accent-color);
   }
 }
 
@@ -856,4 +857,230 @@ a:hover {
     grid-template-columns: 1fr;
     gap: 16px;
   }
+}
+
+
+
+
+/* ========== IMPACT SECTION ========== */
+.impact-section-container {
+  background-color: var(--dark-bg-card); /* Fundo do card, ligeiramente mais claro */
+  padding: 24px 32px; /* Aumentei um pouco o padding para mais respiro */
+  border-radius: 18px; /* Similar a outros cards */
+  margin: 40px auto; /* Espaçamento vertical e centralização */
+  max-width: 1100px; /* Largura máxima similar a outras seções */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2); /* Sombra sutil */
+}
+
+.impact-grid {
+  display: grid;
+  grid-template-columns: 1fr; /* Mobile first: empilhado */
+  gap: 32px;
+}
+
+@media (min-width: 768px) { /* Tablet e Desktop: lado a lado */
+  .impact-grid {
+    grid-template-columns: 1fr 1.5fr; /* Diferenciais menor, KPIs maior */
+  }
+}
+
+.impact-column-title {
+  font-size: 1.75rem; /* Tamanho do título da coluna */
+  font-weight: 700;
+  color: var(--text-primary-dark);
+  margin-bottom: 20px;
+  letter-spacing: -0.5px;
+}
+
+/* Estilos para a lista de Diferenciais */
+.diferenciais-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.diferenciais-item {
+  color: var(--text-secondary-dark);
+  font-size: 1rem;
+  margin-bottom: 12px;
+  padding-left: 24px; /* Espaço para o bullet */
+  position: relative;
+  line-height: 1.5;
+}
+
+.diferenciais-item::before {
+  content: '•'; /* Bullet padrão, estilizado */
+  color: var(--accent-color); /* Cor do bullet */
+  font-size: 1.5em; /* Tamanho do bullet */
+  position: absolute;
+  left: 0px;
+  top: -1px; /* Ajuste fino vertical do bullet */
+  font-weight: bold;
+}
+
+/* Estilos para a área de KPIs */
+.kpis-showcase {
+  display: grid;
+  grid-template-columns: 1fr; /* Mobile: KPIs empilhados */
+  gap: 24px;
+}
+
+@media (min-width: 500px) and (max-width: 767px) { /* Tablet em modo retrato ou mobile maior */
+   .kpis-showcase {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); /* Mais flexível */
+  }
+}
+
+@media (min-width: 768px) { /* No layout de duas colunas, os KPIs podem ter um layout mais específico */
+  .kpis-showcase {
+     /* Conforme a imagem, parece uma grade de 3 colunas ou flexível */
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px; /* Espaçamento entre os blocos de KPI */
+  }
+}
+
+
+.kpi-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.kpi-item-label {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-secondary-dark);
+  margin-bottom: 4px;
+  text-transform: uppercase; /* Deixa o label em maiúsculas como na imagem */
+  letter-spacing: 0.5px;
+}
+
+.kpi-item-value {
+  font-size: 2.2rem; /* Valor do KPI bem destacado */
+  font-weight: 700;
+  color: var(--text-primary-dark); /* Valor principal com cor primária de texto */
+  margin-bottom: 6px;
+  line-height: 1.1;
+}
+
+.kpi-item-description {
+  font-size: 0.85rem;
+  color: var(--text-secondary-dark);
+  opacity: 0.8; /* Descrição um pouco mais sutil */
+  line-height: 1.4;
+  margin: 0;
+}
+
+/* Ajuste para o KPI "Sempre" se ele tiver um estilo diferente ou precisar de mais destaque */
+/* .kpi-item:nth-child(2) .kpi-item-value {
+  color: var(--accent-color);
+} */
+
+
+
+/* ------------------------------------------- */
+/* ESTILOS ESPECÍFICOS PARA O COMPONENTE DA IMAGEM */
+/* ------------------------------------------- */
+
+.prova-viva-section {
+  max-width: 1200px;
+  margin: 60px auto 56px auto;
+  padding: 0 16px;
+}
+
+.prova-viva-header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+  margin-bottom: 24px;
+}
+.prova-viva-header h2 {
+  color: var(--text-primary-dark);
+  font-size: 2.1rem;
+  font-weight: 700;
+}
+.prova-viva-actions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-size: 1.22rem;
+  color: var(--accent-color);
+  font-weight: 600;
+}
+.prova-viva-sub {
+  color: var(--text-secondary-dark);
+  font-size: 1.01rem;
+  font-weight: 400;
+  margin-left: 12px;
+}
+.prova-viva-desc {
+  color: var(--text-secondary-dark);
+  font-size: 1.07rem;
+  margin-top: 3px;
+  margin-bottom: 18px;
+  max-width: 640px;
+}
+
+.prova-viva-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+.prova-viva-card {
+  background: var(--dark-bg-card);
+  border-radius: 16px;
+  box-shadow: 0 2px 18px rgba(0,0,0,0.19);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  overflow: hidden;
+  border: 1px solid transparent;
+  transition: box-shadow 0.15s, border-color 0.15s, transform 0.18s;
+}
+.prova-viva-card:hover {
+  box-shadow: 0 6px 28px rgba(34, 211, 238, 0.18);
+  border-color: var(--accent-color);
+  transform: translateY(-3px) scale(1.022);
+}
+.prova-viva-img-box {
+  width: 100%;
+  aspect-ratio: 16/7;
+  background: #151a20;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.prova-viva-img-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.prova-viva-content {
+  padding: 18px 18px 22px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.prova-viva-content h3 {
+  color: var(--accent-color);
+  font-size: 1.19rem;
+  font-weight: 600;
+  margin-bottom: 2px;
+}
+.prova-viva-content p {
+  color: var(--text-secondary-dark);
+  font-size: 1.01rem;
+  margin: 0 0 6px 0;
+}
+
+@media (max-width: 900px) {
+  .prova-viva-grid { grid-template-columns: 1fr 1fr; gap: 20px; }
+}
+@media (max-width: 600px) {
+  .prova-viva-header h2 { font-size: 1.2rem; }
+  .prova-viva-grid { grid-template-columns: 1fr; gap: 12px; }
+  .prova-viva-content { padding: 13px 9px 15px 9px; }
 }

@@ -14,6 +14,8 @@ import Documentos from "./components/Documentos";
 import Missao from "./components/Missao";
 import FounderCard from './components/FounderCard';
 import Prova from './components/Prova';
+import ImpactSection from './components/ImpactSection';
+import ProvaViva from './components/ProvaViva';
 // ...a a
 
 
@@ -27,7 +29,9 @@ const App = () => {
       <Headline />
       <PartnersCarousel />
       <ValueSection />
+      <ProvaViva />
       <Prova />
+      <ImpactSection />
       <FounderCard />
       <Footer />
     </div>
