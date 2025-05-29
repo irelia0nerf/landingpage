@@ -1,7 +1,6 @@
 import React from 'react';
 import Header from './components/Header';
 import Headline from './components/Headline';
-import Benefits from './components/Benefits';
 import HowItWorks from './components/HowItWorks';
 import DemoArea from './components/DemoArea';
 import CTA from './components/CTA';
@@ -14,8 +13,8 @@ import Documentos from "./components/Documentos";
 import Missao from "./components/Missao";
 import FounderCard from './components/FounderCard';
 import Prova from './components/Prova';
-import ImpactSection from './components/ImpactSection';
 import ProvaViva from './components/ProvaViva';
+import ImpactSection from './components/ImpactSection';
 // ...a a
 
 
@@ -27,9 +26,8 @@ const App = () => {
     <div>
       <Header />
       <Headline />
-      
-      <ValueSection />
       <ProvaViva />
+      <ValueSection />
       <Prova />
       <ImpactSection />
       <FounderCard />
