@@ -1,62 +1,92 @@
-import React from "react";
+import React, { useState } from "react";
+import logo from '../images/logo.png';
 
-// Exemplo de imagens: substitua pelo caminho certo dos seus assets!
-import parceiro1 from '../images/parceiro1.png';
-
-const cards = [
-  {
-    title: "API ScoreLab Ao Vivo",
-    description: "Submeta sua wallet e veja a reputação em tempo real.",
-    img: parceiro1,
-    alt: "Demonstração API ScoreLab",
-    link: "#", // ou "/demo" se quiser
-    button: "Testar agora",
-  },
-  {
-    title: "Governança DFC Transparente",
-    description: "Visualize como funciona a governança digital.",
-    img: parceiro1,
-    alt: "Governança DFC",
-    link: "#",
-    button: "Ver demo",
-  },
-  {
-    title: "Performance em Tempo Real",
-    description: "Acompanhe métricas de performance com dashboards reais.",
-    img: parceiro1,
-    alt: "parceiro1 Dashboard",
-    link: "#",
-    button: "Acessar demo",
-  },
+const NAV_LINKS = [
+  { label: "Solução", target: "solucao" },
+  { label: "Prova Viva", target: "prova" },
+  { label: "Diferenciais", target: "diferenciais" },
 ];
 
-const ProvaViva = () => (
-  <section className="prova-viva-section">
-    <div className="prova-viva-header">
-      <h2>Prova Técnica & Operacional Viva</h2>
-      <div className="prova-viva-actions">
-        <span>Teste e Comprove.</span>
-        <span className="prova-viva-sub">Scoree e comiça</span>
-      </div>
-      <p className="prova-viva-desc">
-        Envie, prove ou simule o comportamento de execução. Demonstre resultados reais sem medo, crie sua própria experiência!
-      </p>
-    </div>
-    <div className="prova-viva-grid">
-      {cards.map((card, i) => (
-        <div className="prova-viva-card" key={i}>
-          <div className="prova-viva-img-box">
-            <img src={card.img} alt={card.alt} />
-          </div>
-          <div className="prova-viva-content">
-            <h3>{card.title}</h3>
-            <p>{card.description}</p>
-            <a className="cta-btn" href={card.link}>{card.button} →</a>
-          </div>
-        </div>
-      ))}
-    </div>
-  </section>
-);
+const scrollToSection = (id) => {
+  const el = document.getElementById(id);
+  if (el) {
+    window.scrollTo({
+      top: el.offsetTop - 65,
+      behavior: "smooth",
+    });
+  }
+};
 
-export default ProvaViva;
+const Header = () => {
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const handleNavClick = (target) => {
+    scrollToSection(target);
+    setMenuOpen(false);
+  };
+
+  return (
+    <>
+      <header className="header">
+        <div className="logo-container">
+          <a href="/" className="logo-link" aria-label="Página inicial">
+            <img src={logo} alt="Logo FoundLab" className="logo-img" />
+            <span className="logo-text">FoundLab</span>
+          </a>
+        </div>
+
+        {/* NAV DESKTOP */}
+        <nav className="nav-links">
+          {NAV_LINKS.map((item) => (
+            <button
+              className="nav-link"
+              key={item.target}
+              onClick={() => scrollToSection(item.target)}
+            >
+              {item.label}
+            </button>
+          ))}
+        </nav>
+
+        <button className="cta-button desktop-demo">Testar Demo</button>
+
+        {/* HAMBURGER - MOBILE */}
+        <button
+          className={`hamburger${menuOpen ? " open" : ""}`}
+          aria-label="Abrir menu"
+          onClick={() => setMenuOpen(!menuOpen)}
+        >
+          <span />
+          <span />
+          <span />
+        </button>
+      </header>
+
+      {/* MOBILE NAV MENU */}
+      <div className={`mobile-nav-overlay${menuOpen ? " show" : ""}`} onClick={() => setMenuOpen(false)} />
+      <nav className={`mobile-nav${menuOpen ? " open" : ""}`}>
+        <div className="mobile-nav-inner">
+          <div className="mobile-nav-links">
+            {NAV_LINKS.map((item) => (
+              <button
+                className="nav-link"
+                key={item.target}
+                onClick={() => handleNavClick(item.target)}
+              >
+                {item.label}
+              </button>
+            ))}
+          </div>
+          <button
+            className="cta-button mobile-demo"
+            onClick={() => setMenuOpen(false)}
+          >
+            Testar Demo
+          </button>
+        </div>
+      </nav>
+    </>
+  );
+};
+
+export default Header;

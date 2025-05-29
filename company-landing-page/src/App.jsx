@@ -27,12 +27,13 @@ const App = () => {
     <div>
       <Header />
       <Headline />
-      <PartnersCarousel />
+      
       <ValueSection />
       <ProvaViva />
       <Prova />
       <ImpactSection />
       <FounderCard />
+      <PartnersCarousel />
       <Footer />
     </div>
   );

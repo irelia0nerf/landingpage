@@ -13,6 +13,8 @@ const documentos = [
   { name: "Pitch Deck", url: "/docs/compliance.pdf" },
 ];
 
+
+
 const Footer = () => (
   <footer className="footer-main">
     <div className="footer-container">
@@ -35,9 +37,9 @@ const Footer = () => (
         </ul>
       </div>
 
-      <div className="footer-section footer-seal">
+ {/*     <div className="footer-section footer-seal">
         Aplicante no Google for Startups Cloud Program
-      </div>
+      </div> */}
     </div>
     <div className="footer-bottom">
       © {today.getFullYear()} FoundLab.cloud. Todos os direitos reservados.
