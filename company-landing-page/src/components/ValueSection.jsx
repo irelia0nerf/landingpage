@@ -84,7 +84,7 @@ const ValueSection = () => {
   }, []);
 
   return (
-    <section className="value-section" ref={sectionRef}>
+    <section className="value-section animated-section" ref={sectionRef}>
       <div className="value-headline value-headline--center">
         <h2>Nossa missão</h2>
         <p>

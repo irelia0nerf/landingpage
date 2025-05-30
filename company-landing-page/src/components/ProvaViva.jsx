@@ -1,67 +1,60 @@
 import React from "react";
 
-// Ícones SVG (customizáveis conforme quiser)
-const icons = [
-  (
-    // Plug
-    <svg width="58" height="58" viewBox="0 0 58 58" fill="none">
-      <path d="M20 14v12M38 14v12M20 40c0 5 4 9 9 9s9-4 9-9V30M16 28h26" stroke="#fff" strokeWidth="2.7" strokeLinecap="round"/>
-      <path d="M28 35v8" stroke="#fff" strokeWidth="2.7" strokeLinecap="round"/>
-    </svg>
-  ),
-  (
-    // Shield/Gavel
-    <svg width="58" height="58" viewBox="0 0 58 58" fill="none">
-      <rect x="13" y="18" width="32" height="20" rx="8" stroke="#fff" strokeWidth="2.4"/>
-      <path d="M21 25h16M21 30h16" stroke="#fff" strokeWidth="2" strokeLinecap="round"/>
-      <path d="M29 38v-8" stroke="#fff" strokeWidth="2" strokeLinecap="round"/>
-    </svg>
-  ),
-  (
-    // Speed/Chart
-    <svg width="58" height="58" viewBox="0 0 58 58" fill="none">
-      <path d="M18 38a12 12 0 1 1 22 0" stroke="#fff" strokeWidth="2.7"/>
-      <path d="M29 38l5-5" stroke="#fff" strokeWidth="2.7" strokeLinecap="round"/>
-      <rect x="23" y="38" width="4" height="6" rx="2" fill="#fff"/>
-      <rect x="31" y="40" width="4" height="4" rx="2" fill="#fff"/>
-    </svg>
-  )
-];
-
-// Dados das "provas"
-const provas = [
+const cards = [
   {
-    title: "API ScoreLab\nAo Vivo",
-    icon: icons[0],
-    label: "API Plug"
+    icon: (
+      // API Scorable (ícone de API/server)
+      <svg width="56" height="56" viewBox="0 0 56 56" fill="none">
+        <rect x="7" y="12" width="42" height="32" rx="7" stroke="#22D3EE" strokeWidth="3.5" fill="#16223A"/>
+        <rect x="15" y="20" width="26" height="5" rx="2.5" fill="#22D3EE" opacity="0.65"/>
+        <circle cx="19" cy="34" r="2.6" fill="#22D3EE" />
+        <circle cx="28" cy="34" r="2.6" fill="#22D3EE" opacity="0.62"/>
+        <circle cx="37" cy="34" r="2.6" fill="#22D3EE" opacity="0.44"/>
+      </svg>
+    ),
+    title: "API Scorable",
+    label: "Nota instantânea"
   },
   {
-    title: "Governança DFC\nTransparente",
-    icon: icons[1],
-    label: "API"
+    icon: (
+      // Governança PEG (ícone de compliance/escudo)
+      <svg width="56" height="56" viewBox="0 0 56 56" fill="none">
+        <path d="M28 10L44 16V28C44 39 28 46 28 46C28 46 12 39 12 28V16L28 10Z" stroke="#22D3EE" strokeWidth="3.5" fill="#16223A"/>
+        <path d="M28 21V31" stroke="#22D3EE" strokeWidth="2.2" strokeLinecap="round"/>
+        <circle cx="28" cy="36" r="2" fill="#22D3EE"/>
+      </svg>
+    ),
+    title: "Governança PEG",
+    label: "Compliance real-time"
   },
   {
-    title: "Performance em\nTempo Real",
-    icon: icons[2],
-    label: "web3"
-  }
+    icon: (
+      // Performance em Rede (ícone de rede/performance)
+      <svg width="56" height="56" viewBox="0 0 56 56" fill="none">
+        <circle cx="28" cy="28" r="18" stroke="#22D3EE" strokeWidth="3.5" fill="#16223A"/>
+        <circle cx="28" cy="28" r="6.2" fill="#22D3EE" />
+        <circle cx="44" cy="28" r="2.6" fill="#22D3EE" opacity="0.6"/>
+        <circle cx="28" cy="44" r="2.6" fill="#22D3EE" opacity="0.4"/>
+        <circle cx="12" cy="28" r="2.6" fill="#22D3EE" opacity="0.6"/>
+        <circle cx="28" cy="12" r="2.6" fill="#22D3EE" opacity="0.4"/>
+      </svg>
+    ),
+    title: "Performance em Rede",
+    label: "Acurácia garantida"
+  },
 ];
 
 const ProvaViva = () => (
-  <section className="prova-viva-section" id="prova">
+  <section className="prova-viva-section animated-section">
     <h2 className="prova-viva-title">
-      Prova Técnica & Operacional Viva:<br /> <span className="highlight">Teste e Comprove</span>
+      Prova Técnica & Operacional Viva: <span className="highlight">Teste e Comprove</span>
     </h2>
     <div className="prova-viva-grid">
-      {provas.map((item, i) => (
-        <div className="prova-viva-card" key={i}>
-          <div className="prova-viva-card-title">
-            {item.title.split('\n').map((line, j) => (
-              <span key={j}>{line}<br /></span>
-            ))}
-          </div>
-          <div className="prova-viva-icon">{item.icon}</div>
-          <div className="prova-viva-label">{item.label}</div>
+      {cards.map((card, i) => (
+        <div className="prova-viva-card animated-card" key={i}>
+          <div className="prova-viva-icon">{card.icon}</div>
+          <div className="prova-viva-card-title">{card.title}</div>
+          <div className="prova-viva-label">{card.label}</div>
         </div>
       ))}
     </div>

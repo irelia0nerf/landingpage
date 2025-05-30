@@ -149,7 +149,7 @@ const ImpactSection = () => {
   }, []); // Executa apenas uma vez na montagem
 
   return (
-    <div className="impact-section-container" ref={sectionRef}>
+    <div className="impact-section-container animated-section" ref={sectionRef}>
       <div className="impact-grid">
         {/* Coluna dos Diferenciais */}
         <div className="impact-column diferenciais-column">

@@ -43,7 +43,7 @@ const FounderCard = () => {
     return () => observer.disconnect();
   }, []);
 
-  // Alex é o destaque, outros são linha de baixo
+  // Alex em destaque, os outros em linha abaixo
   const mainFounder = founders[0];
   const rest = founders.slice(1);
 
@@ -52,7 +52,9 @@ const FounderCard = () => {
       <h2 className="founders-title">EQUIPE</h2>
       <div className="founders-grid">
         <div className="founders-top">
-          <div className={`founder-card${show ? " fade-in" : ""}`}>
+          <div
+            className={`founder-card founder-card-main${show ? " fade-in" : ""}`}
+          >
             <div className="founder-info">
               <div className="founder-name">{mainFounder.name}</div>
               <div className="founder-role">{mainFounder.role}</div>
@@ -61,7 +63,7 @@ const FounderCard = () => {
           </div>
         </div>
         <div className="founders-bottom">
-          {rest.map((f, i) => (
+          {rest.map((f) => (
             <div className={`founder-card${show ? " fade-in" : ""}`} key={f.name}>
               <div className="founder-info">
                 <div className="founder-name">{f.name}</div>

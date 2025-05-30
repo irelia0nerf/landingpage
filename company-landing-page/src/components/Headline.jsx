@@ -15,6 +15,9 @@ const Headline = () => {
   const [displayed, setDisplayed] = useState('');
   const [typing, setTyping] = useState(true);
 
+  // Calcula o texto mais longo para minHeight
+  const maxLenText = highlights.reduce((a, b) => a.length > b.length ? a : b);
+
   useEffect(() => {
     let timeout;
     if (typing) {
@@ -42,14 +45,40 @@ const Headline = () => {
     <section className="hero-section">
       <h1>
         FoundLab<br />
-        <span className="highlight" style={{ minHeight: 36, display: "inline-block" }}>
-          {displayed}
-          <span className="typewriter-cursor" style={{ color: "#2962ff" }}>|</span>
+        <span
+          className="highlight"
+          style={{
+            minHeight: "36px", // Garante altura mínima
+            display: "inline-block",
+            position: "relative",
+            width: "100%",
+          }}
+        >
+          {/* Esta span invisível reserva espaço */}
+          <span
+            style={{
+              opacity: 0,
+              position: "absolute",
+              left: 0,
+              pointerEvents: "none",
+              userSelect: "none",
+              fontWeight: "inherit",
+              fontSize: "inherit",
+              fontFamily: "inherit"
+            }}
+            aria-hidden="true"
+          >
+            {maxLenText}
+          </span>
+          {/* Texto digitado por cima */}
+          <span style={{ position: "relative" }}>
+            {displayed}
+            <span className="typewriter-cursor" style={{ color: "#2962ff" }}>|</span>
+          </span>
         </span>
       </h1>
       <p className="subtitle"></p>
       <button className="cta-btn">Comece agora</button>
-      {/* Adicione este CSS em seu arquivo global ou componente */}
       <style>{`
         .typewriter-cursor {
           animation: blink 1s infinite;

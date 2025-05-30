@@ -21,6 +21,10 @@ import ChamadaVideo from './components/ChamadaVideo';
 const App = () => {
   return (
     <div>
+      {/* Blobs de background para efeito visual */}
+      <div className="fancy-bg-blur" />
+      <div className="fancy-bg-blur2" />
+      
       <Header />
       <Headline />
       <ProvaViva />
@@ -33,5 +37,6 @@ const App = () => {
     </div>
   );
 };
+
 
 export default App;
