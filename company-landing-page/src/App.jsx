@@ -13,6 +13,8 @@ import ProvaViva from './components/ProvaViva';
 import ImpactSection from './components/ImpactSection';
 import ChamadaVideo from './components/ChamadaVideo';
 import RoadmapDiferenciais from './components/RoadmapDiferenciais';
+import HeroSection from './components/HeroB3Animada';
+import LatentPainSection from './components/LatentPainSection';
 // ...a a
 
 
@@ -27,12 +29,16 @@ const App = () => {
       <div className="fancy-bg-blur2" />
       
       <Header />
-      <Headline />
+
+{/*      <Headline /> */}
+      <HeroSection />
       <ProvaViva />
   
       <ChamadaVideo />
 
-      <RoadmapDiferenciais />
+      <LatentPainSection />
+
+{/*      <RoadmapDiferenciais />  */}
       <ValueSection />
       <ImpactSection />
       <FounderCard />
