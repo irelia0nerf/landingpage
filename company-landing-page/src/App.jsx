@@ -12,6 +12,7 @@ import FounderCard from './components/FounderCard';
 import ProvaViva from './components/ProvaViva';
 import ImpactSection from './components/ImpactSection';
 import ChamadaVideo from './components/ChamadaVideo';
+import RoadmapDiferenciais from './components/RoadmapDiferenciais';
 // ...a a
 
 
@@ -28,7 +29,10 @@ const App = () => {
       <Header />
       <Headline />
       <ProvaViva />
+  
       <ChamadaVideo />
+
+      <RoadmapDiferenciais />
       <ValueSection />
       <ImpactSection />
       <FounderCard />

@@ -12,8 +12,8 @@ const cards = [
         <circle cx="37" cy="34" r="2.6" fill="#22D3EE" opacity="0.44"/>
       </svg>
     ),
-    title: "API Scorable",
-    label: "Nota instantânea"
+    title: "Moat Real",
+    label: "Primeira infra nativa de reputação financeira plugável, anti-fraude, sem lock-in."
   },
   {
     icon: (
@@ -24,8 +24,8 @@ const cards = [
         <circle cx="28" cy="36" r="2" fill="#22D3EE"/>
       </svg>
     ),
-    title: "Governança PEG",
-    label: "Compliance real-time"
+    title: "ScoreLab Engine",
+    label: "Engine dinâmica, flags programáveis, API pública, NFT reputação cross-chain."
   },
   {
     icon: (
@@ -39,8 +39,8 @@ const cards = [
         <circle cx="28" cy="12" r="2.6" fill="#22D3EE" opacity="0.4"/>
       </svg>
     ),
-    title: "Performance em Rede",
-    label: "Acurácia garantida"
+    title: "Compliance de verdade",
+    label: "LGPD, Open Finance, auditoria, arquitetura não-custodial. Segurança e transparência."
   },
 ];
 

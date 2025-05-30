@@ -77,7 +77,8 @@ const Headline = () => {
           </span>
         </span>
       </h1>
-      <p className="subtitle"></p>
+      <p className="subtitle">Infraestrutura modular, compliance nativo, score invisível e trust layer real conectando TradFi e Web3.
+Pronto para o mundo. Pronto para você.</p>
       <button className="cta-btn">Comece agora</button>
       <style>{`
         .typewriter-cursor {
