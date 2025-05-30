@@ -2,30 +2,30 @@ import React, { useEffect, useState, useRef } from 'react';
 
 // Dados para o componente
 const diferenciaisData = [
-  'lorem ipsum dolor sit amet',
-  'lorem ipsum dolor sit amet',
-  'lorem ipsum dolor sit amet',
-  'lorem ipsum dolor sit amet',
+  '2.100 wallets únicas analisadas e auditadas',
+  'ZERO incidentes de vazamento ou comprometimento de dados reportados',
+  '34 incidentes de risco real detectados e bloqueados antes do prejuízo',
+  'Compliance: 100% compatível com LGPD, padrões Open Finance e requisitos de auditoria independente',
 
 ];
 
 const impactoKpisData = [
   {
-    label: 'Latência P95',
-    value: '135ms', // Manter a unidade aqui para o formatador
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+    label: 'Movimentações monitoradas',
+    value: 'R$19,8', // Manter a unidade aqui para o formatador
+    description: 'movimentações monitoradas com score e flags automáticas.',
     isNumeric: true, // Flag para identificar se o valor deve ser animado
   },
   {
-    label: 'Sempre',
-    value: 'Sempre',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-    isNumeric: false, // Este valor não é numérico, não será animado
+    label: 'Uptime',
+    value: '98,7%',
+    description: 'uptime comprovado em produção real.',
+    isNumeric: true, // Este valor não é numérico, não será animado
   },
   {
-    label: 'Flags Aprovadas',
-    value: '99.8%', // Manter a unidade aqui
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+    label: 'Requisições API processadas',
+    value: '36.970', // Manter a unidade aqui
+    description: 'requisições API processadas em ambiente de produção (2024).',
     isNumeric: true,
   },
 ];
