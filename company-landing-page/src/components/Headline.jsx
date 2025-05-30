@@ -48,13 +48,14 @@ const Headline = () => {
         <span
           className="highlight"
           style={{
-            minHeight: "36px", // Garante altura mínima
+            minHeight: "36px",
             display: "inline-block",
+            verticalAlign: "bottom",
+            whiteSpace: "nowrap",  // Não deixa quebrar a linha aqui!
             position: "relative",
-            width: "100%",
           }}
         >
-          {/* Esta span invisível reserva espaço */}
+          {/* Span invisível reserva espaço para texto mais longo, inline e nowrap */}
           <span
             style={{
               opacity: 0,
@@ -64,21 +65,24 @@ const Headline = () => {
               userSelect: "none",
               fontWeight: "inherit",
               fontSize: "inherit",
-              fontFamily: "inherit"
+              fontFamily: "inherit",
+              whiteSpace: "nowrap",
             }}
             aria-hidden="true"
           >
             {maxLenText}
           </span>
           {/* Texto digitado por cima */}
-          <span style={{ position: "relative" }}>
+          <span style={{ position: "relative", whiteSpace: "nowrap" }}>
             {displayed}
             <span className="typewriter-cursor" style={{ color: "#2962ff" }}>|</span>
           </span>
         </span>
       </h1>
-      <p className="subtitle">Infraestrutura modular, compliance nativo, score invisível e trust layer real conectando TradFi e Web3.
-Pronto para o mundo. Pronto para você.</p>
+      <p className="subtitle">
+        Infraestrutura modular, compliance nativo, score invisível e trust layer real conectando TradFi e Web3.
+        Pronto para o mundo. Pronto para você.
+      </p>
       <button className="cta-btn">Comece agora</button>
       <style>{`
         .typewriter-cursor {
