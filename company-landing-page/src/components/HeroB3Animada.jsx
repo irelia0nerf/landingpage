@@ -10,24 +10,37 @@ const TYPING_SPEED = 55;
 const ERASING_SPEED = 28;
 const WAIT_AFTER_TYPING = 2100;
 
-// ======= Números animados =======
+// ======= Métricas =======
 const metrics = [
-  {
-    value: 1234567,
-    label: "Wallets Analisadas",
-    duration: 1300,
-    decimals: 0,
-  },
-  {
-    value: 15234,
-    label: "Eventos de Risco Identificados\n(Últimas 24h)",
-    duration: 1400,
-    decimals: 0,
-  }
+  { value: "300+", label: "Clientes Enterprise", duration: 1200 },
+  { value: "2.14B+", label: "Dispositivos Analisados", duration: 1500 },
+  { value: "385.00B+", label: "Pagamentos Monitorados", duration: 1700 },
+  { value: "1234567", label: "Wallets Analisadas", duration: 1200 },
+  { value: "15234", label: "Eventos de Risco Identificados (Últimas 24h)", duration: 1100 },
 ];
 
-// Componente para animar números subindo
-function CountUp({ value, duration = 1000, decimals = 0 }) {
+// Utilitário para parsear e animar qualquer tipo de número
+function parseValue(str) {
+  if (typeof str === "number") return { num: str, suffix: "" };
+  if (typeof str !== "string") return { num: 0, suffix: "" };
+
+  let num = parseFloat(str.replace(/[^\d.]/g, ""));
+  let suffix = "";
+  if (/K/i.test(str)) { num *= 1_000; suffix = "K+"; }
+  else if (/M/i.test(str)) { num *= 1_000_000; suffix = "M+"; }
+  else if (/B/i.test(str)) { num *= 1_000_000_000; suffix = "B+"; }
+  else if (/\+$/.test(str)) { suffix = "+"; }
+
+  // Detecta casas decimais (para exibir com 2 casas em B/M)
+  let decimals = 0;
+  if (/\d+\.\d+/.test(str)) decimals = 2;
+
+  return { num, suffix, decimals };
+}
+
+// Componente animador
+function CountUp({ value, duration = 1000 }) {
+  const { num, suffix, decimals } = parseValue(value);
   const [display, setDisplay] = useState(0);
 
   useEffect(() => {
@@ -38,27 +51,42 @@ function CountUp({ value, duration = 1000, decimals = 0 }) {
       const now = Date.now();
       const elapsed = now - startTimestamp;
       const progress = Math.min(elapsed / duration, 1);
-      const current = Math.floor(progress * (value - start) + start);
+      const current = start + (num - start) * progress;
 
       setDisplay(current);
 
       if (progress < 1) {
         requestAnimationFrame(animate);
       } else {
-        setDisplay(value);
+        setDisplay(num);
       }
     }
-
     animate();
     // eslint-disable-next-line
   }, [value, duration]);
 
-  // Formatação: 1.234.567
-  const formatted = display.toLocaleString('pt-BR', {
-    minimumFractionDigits: decimals,
-    maximumFractionDigits: decimals,
-  });
-  return <span className="hero-b3-metric-value">{formatted}</span>;
+  // Formatação para números grandes/sufixos
+  let formatted;
+  if (suffix === "B+" || suffix === "M+" || suffix === "K+") {
+    let divisor = 1;
+    if (suffix === "B+") divisor = 1_000_000_000;
+    if (suffix === "M+") divisor = 1_000_000;
+    if (suffix === "K+") divisor = 1_000;
+    formatted = (display / divisor).toLocaleString('pt-BR', {
+      minimumFractionDigits: decimals,
+      maximumFractionDigits: decimals,
+    }) + suffix;
+  } else if (suffix === "+") {
+    formatted = Math.floor(display).toLocaleString('pt-BR') + "+";
+  } else {
+    formatted = Math.floor(display).toLocaleString('pt-BR');
+  }
+
+  return (
+    <span className="hero-b3-metric-value">
+      {formatted}
+    </span>
+  );
 }
 
 // ======= Hero principal =======
@@ -98,7 +126,7 @@ const HeroB3Animada = () => {
     <section className="hero-b3-animada">
       <div className="hero-b3-content">
         <h1 className="hero-b3-title">
-          <span style={{ color: "#144399" }}>FoundLab:</span>
+          <span style={{ color: "#144399" }}>FoundLab</span>
         </h1>
         <span
           className="hero-b3-highlight"
@@ -138,17 +166,18 @@ const HeroB3Animada = () => {
           </span>
         </span>
 
-        <p className="hero-b3-description">
+        <p className="hero-b3-description justified-montserrat">
           ScoreLab em tempo real. Governança DFC auditável.<br />
           Riscos mitigados antes que virem perdas.<br />
           Construímos a infraestrutura de reputação que o futuro exige – e provamos isso ao vivo.
         </p>
 
+        {/* MÉTRICAS EM LINHA */}
         <div className="hero-b3-metrics-container">
-          <div className="hero-b3-metrics-card">
+          <div className="hero-b3-metrics-card hero-b3-metrics-card--inline">
             {metrics.map((item, i) => (
               <div className="hero-b3-metrics-block" key={i}>
-                <CountUp value={item.value} duration={item.duration} decimals={item.decimals} />
+                <CountUp value={item.value} duration={item.duration || 1200} />
                 <div className="hero-b3-metric-label">
                   {item.label.split('\n').map((l, idx) => (
                     <div key={idx}>{l}</div>
@@ -158,6 +187,8 @@ const HeroB3Animada = () => {
             ))}
           </div>
         </div>
+
+        <h1 className='text-green-institucional'>Teste e Comprove</h1>
 
         <div className="hero-b3-cta-buttons">
           <button className="hero-b3-cta">

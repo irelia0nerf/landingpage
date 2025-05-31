@@ -47,14 +47,16 @@ const cards = [
 const ProvaViva = () => (
   <section className="prova-viva-section animated-section">
     <h2 className="prova-viva-title">
-      Prova Técnica & Operacional Viva: <span className="highlight">Teste e Comprove</span>
+      Prova Técnica & Operacional Viva
     </h2>
     <div className="prova-viva-grid">
       {cards.map((card, i) => (
         <div className="prova-viva-card animated-card" key={i}>
           <div className="prova-viva-icon">{card.icon}</div>
           <div className="prova-viva-card-title">{card.title}</div>
-          <div className="prova-viva-label">{card.label}</div>
+          <div className="prova-viva-label prova-viva-label--fixed">
+            {card.label}
+          </div>
         </div>
       ))}
     </div>

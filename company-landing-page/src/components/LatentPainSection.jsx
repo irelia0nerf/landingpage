@@ -36,10 +36,13 @@ const icons = {
   ),
 };
 
-// Barra de confiança sóbria
+// Barra de confiança sóbria com valor real
 const ConfiaBar = ({ value, label, color }) => (
   <div className="lp-bar-group">
-    <div className="lp-bar-label">{label}</div>
+    <div className="lp-bar-label-wrap">
+      <span className="lp-bar-label">{label}</span>
+      <span className="lp-bar-number" style={{ color }}>{value}%</span>
+    </div>
     <div className="lp-bar-bg">
       <div
         className="lp-bar-inner"
@@ -48,14 +51,16 @@ const ConfiaBar = ({ value, label, color }) => (
           background: color,
         }}
       />
-      <span className="lp-bar-value" style={{ color }}>{value}</span>
     </div>
   </div>
 );
 
+
 const LatentPainSection = () => {
   const [fraud, setFraud] = useState(0);
   const [cost, setCost] = useState(0);
+  const conf = 62; // confiança real
+  const desconfianca = 38; // 100 - 62
 
   useEffect(() => {
     // Animação de números sóbria
@@ -73,8 +78,7 @@ const LatentPainSection = () => {
     <section className="lp-section animated-section">
       <div className="lp-container">
         <h2 className="lp-title">
-          <span>A Dor Latente:</span>{" "}
-          <span className="lp-title-highlight">Custo da Desconfiança Digital</span>
+          <span className="lp-title-highlight">Qual o Custo da Desconfiança Digital?</span>
         </h2>
         <p className="lp-desc">
           Quando a confiança falha, os custos são reais e mensuráveis. Veja o impacto da desconfiança na economia digital.
@@ -119,7 +123,7 @@ const LatentPainSection = () => {
               <span className="lp-tempo-novo">5min</span>
             </div>
             <div className="lp-card-desc">
-              O tempo médio para detecção de atividades suspeitas é de 72 horas. Com automação inteligente, reduzimos para minutos.
+              O tempo médio para detecção de atividades suspeitas é de 72 horas. Com automação inteligente, reduzimos para 5 minutos.
             </div>
           </div>
           {/* Card: Confiança do Consumidor */}
@@ -129,13 +133,15 @@ const LatentPainSection = () => {
               <span className="lp-card-title">Confiança do Consumidor</span>
             </div>
             <div className="lp-bar-anim-wrap">
-              <ConfiaBar  label="CONFIANÇA" color="#009D9A" />
-              <ConfiaBar  label="DESCONFIANÇA" color="#FF9245" />
+              <ConfiaBar label="CONFIANÇA" value={62} color="#009D9A" />
+              <ConfiaBar label="DESCONFIANÇA" value={38} color="#FF9245" />
             </div>
-            <div className="lp-card-desc">
+            {/* Descrição vem logo abaixo, como nos outros */}
+            <div className="lp-card-desc" style={{marginTop: "18px"}}>
               Apenas 62% dos consumidores confiam em plataformas financeiras digitais, criando uma barreira significativa para adoção.
             </div>
           </div>
+
         </div>
       </div>
     </section>

@@ -36,10 +36,10 @@ const ChamadaVideo = () => {
             className="video-frame"
             src={video}
             controls
-            muted // Importante: garante autoplay
+            muted
             ref={videoRef}
             poster="/images/video-poster.png"
-            playsInline // Melhora suporte mobile
+            playsInline
           >
             Seu navegador não suporta vídeo.
           </video>

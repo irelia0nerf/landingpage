@@ -4,7 +4,7 @@ import Headline from './components/Headline';
 
 import Footer from './components/Footer';
 import './styles/main.css';
-import ValueSection from './components/ValueSection';
+import ValueMissionCard from './components/ValueMissionCard';
 import PartnersCarousel from './components/PartnersCarousel';
 
 
@@ -39,7 +39,7 @@ const App = () => {
       <LatentPainSection />
 
 {/*      <RoadmapDiferenciais />  */}
-      <ValueSection />
+      <ValueMissionCard />
       <ImpactSection />
       <FounderCard />
       <PartnersCarousel />
