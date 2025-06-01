@@ -1186,7 +1186,6 @@ a:hover {
 .hero-b3-cta:hover {
   background: #144399;
   color: #fff;
-  transform: scale(1.04) translateY(-2px) rotate(-2deg);
   box-shadow: 0 8px 28px #1793b070;
 }
 .hero-b3-cta-outline {
@@ -1208,7 +1207,6 @@ a:hover {
   background: #e1ecf4;
   color: #144399;
   border-color: #144399;
-  transform: scale(1.04) translateY(-2px) rotate(-1deg);
   box-shadow: 0 6px 18px #1793b058;
 }
 
