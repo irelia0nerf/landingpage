@@ -16,7 +16,7 @@ const documentos = [
 
 
 const Footer = () => (
-  <footer className="footer-main">
+  <footer id="contato" className="footer-main">
     <div className="footer-container">
       <div className="footer-section">
         <div className="footer-company">FoundLab.cloud</div>

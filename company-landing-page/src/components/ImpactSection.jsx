@@ -110,7 +110,7 @@ const ImpactSection = () => {
   }, []);
 
   return (
-    <div className="impact-section-container animated-section" ref={sectionRef}>
+    <div id="kpis" className="impact-section-container animated-section" ref={sectionRef}>
       <div className="impact-grid">
         <div className="impact-column diferenciais-column">
           <h3 className="impact-column-title">Diferenciais</h3>
