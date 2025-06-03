@@ -4,7 +4,6 @@ import backHero from '../images/backHero.jpg';
 
 const HeroInstitucional = () => (
   <section className="hero-institucional">
-    <img src={backHero} alt="Fundo Hero" className="hero-institucional-bg" />
 
     <div className="hero-institucional-content">
       <img src={logo} alt="Logo FoundLab" className="hero-institucional-logo" />
