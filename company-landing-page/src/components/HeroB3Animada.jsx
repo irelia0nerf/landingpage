@@ -1,8 +1,11 @@
 import React from 'react';
-import logo from '../images/logoPreto.png'; // Ajuste para o logo institucional, se necessário
+import logo from '../images/logoPreto.png';
+import backHero from '../images/backHero.jpg';
 
 const HeroInstitucional = () => (
   <section className="hero-institucional">
+    <img src={backHero} alt="Fundo Hero" className="hero-institucional-bg" />
+
     <div className="hero-institucional-content">
       <img src={logo} alt="Logo FoundLab" className="hero-institucional-logo" />
       <span className="hero-institucional-slogan">Reputação & Capital</span>
@@ -13,8 +16,7 @@ const HeroInstitucional = () => (
       </h1>
 
       <p className="hero-institucional-subtitle">
-        Conectamos compliance, score e confiança<br />
-        para instituições que movem bilhões.
+        A FoundLab opera como uma infraestrutura modular e de alto desempenho, projetada para processamento complexo de risco e reputação. Sua arquitetura é composta por motores interconectados que orquestram fluxos de dados, geram inteligência preditiva e garantem a auditabilidade do processo em tempo real.
       </p>
 
       <button className="hero-institucional-cta">

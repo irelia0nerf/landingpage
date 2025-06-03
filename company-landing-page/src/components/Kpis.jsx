@@ -2,11 +2,11 @@ import React, { useEffect, useState } from "react";
 
 // Lista de KPIs
 const metrics = [
-  { value: "300+", label: "Clientes Enterprise", duration: 1200 },
-  { value: "2.14B+", label: "Dispositivos\nAnalisados", duration: 1500 },
-  { value: "385.00B+", label: "Pagamentos\nMonitorados", duration: 1700 },
-  { value: "1234567", label: "Wallets\nAnalisadas", duration: 1200 },
-  { value: "15234", label: "Eventos de Risco\nIdentificados\n(Últimas 24h)", duration: 1100 },
+  { value: "47+", label: "Empresas Integradas", duration: 1200 },
+  { value: "108231", label: "Wallets Avaliadas (ScoreLab)", duration: 1500 },
+  { value: "6238981", label: "Eventos de Score Processados", duration: 1700 },
+  { value: "92.3M+", label: "Transações Monitoradas", duration: 1200 },
+  { value: "712", label: "Eventos de Risco Crítico (Últimas 24h)", duration: 1100 },
 ];
 
 // Parse e formatação

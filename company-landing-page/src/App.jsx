@@ -19,6 +19,8 @@ import Diferenciais from './components/Diferenciais';
 import ComoFunciona from './components/ComoFunciona';
 import SobreNos from './components/SobreNos';
 import Kpis from './components/Kpis';
+
+
 // ...a a
 
 
@@ -27,19 +29,29 @@ import Kpis from './components/Kpis';
 
 const App = () => {
   return (
-    <div>
+    <div style={{position: 'relative', minHeight: '100vh', overflow: 'hidden'}}>
       {/* Blobs de background para efeito visual */}
       <div className="fancy-bg-blur" />
       <div className="fancy-bg-blur2" />
       
       <Header />
+
+
       <HeroSection />
+
       <PartnersCarousel />
       
       <OQueFazemos />
       <Kpis />
       <Diferenciais />
-      <ChamadaVideo />
+
+      <section className="chamada-video-section chamada-video-bg">
+
+           <ChamadaVideo />
+
+      </section>
+
+ 
       
       <ComoFunciona />
 

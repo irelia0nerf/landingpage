@@ -429,6 +429,12 @@ a:hover {
 
 
 /* ========== CHAMADA VIDEO ========== */
+.chamada-video-bg {
+  position: relative;
+  overflow: visible;
+  background: none; /* Remove cor de fundo, fica só linhas */
+}
+
 .chamada-video-section {
   max-width: 1100px;
   margin: 58px auto 0 auto;
@@ -436,6 +442,8 @@ a:hover {
 }
 
 .chamada-video-content {
+  position: relative;
+  z-index: 1;
   background: var(--light-bg-card);
   border-radius: 14px;
   box-shadow: 0 2px 18px #0053B30F;
@@ -443,9 +451,35 @@ a:hover {
   padding: 36px 32px 40px 32px;
   display: flex;
   flex-direction: column;
-  align-items: center;       /* <-- Centraliza tudo na vertical */
+  align-items: center;
   justify-content: flex-start;
   gap: 18px;
+  /* Sem overflow hidden! */
+}
+
+/* LINHAS CURVAS DE FUNDO */
+.chamada-video-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  width: 100vw;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 0;
+  pointer-events: none;
+  background: url("data:image/svg+xml,%3Csvg width='1920' height='260' viewBox='0 0 1920 260' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M-60 30 Q960 10 1980 60' stroke='%23cfd8e7' stroke-width='1.3' opacity='0.9'/%3E%3Cpath d='M-60 60 Q960 40 1980 90' stroke='%23cfd8e7' stroke-width='1.1' opacity='0.8'/%3E%3Cpath d='M-60 90 Q960 70 1980 120' stroke='%23cfd8e7' stroke-width='1' opacity='0.6'/%3E%3Cpath d='M-60 120 Q960 100 1980 150' stroke='%23cfd8e7' stroke-width='0.8' opacity='0.5'/%3E%3Cpath d='M-60 150 Q960 130 1980 180' stroke='%23cfd8e7' stroke-width='0.7' opacity='0.35'/%3E%3Cpath d='M-60 180 Q960 160 1980 210' stroke='%23cfd8e7' stroke-width='0.6' opacity='0.20'/%3E%3C/svg%3E");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top center;
+}
+
+
+
+/* Conteúdo sempre acima das linhas */
+.chamada-video-textos,
+.chamada-video-midia {
+  position: relative;
+  z-index: 1;
 }
 
 .chamada-video-textos {
@@ -453,8 +487,8 @@ a:hover {
   display: flex;
   flex-direction: column;
   gap: 16px;
-  align-items: center;       /* <-- Centraliza os textos */
-  text-align: center;        /* <-- Alinha texto ao centro */
+  align-items: center;
+  text-align: center;
 }
 
 .chamada-video-title {
@@ -471,14 +505,14 @@ a:hover {
   font-size: 1.12rem;
   margin-bottom: 10px;
   font-family: 'Montserrat', Arial, sans-serif;
-  text-align: center;       /* <-- Centraliza o texto */
+  text-align: center;
   max-width: 900px;
 }
 
 .chamada-video-midia {
   width: 100%;
   display: flex;
-  justify-content: center;  /* <-- Centraliza o vídeo */
+  justify-content: center;
   align-items: center;
   margin-top: 18px;
 }
@@ -499,6 +533,7 @@ a:hover {
   .chamada-video-title { font-size: 1.3rem; }
   .video-frame { width: 100%; min-width: 0; }
 }
+
 
 
 
@@ -1609,89 +1644,203 @@ a:hover {
 /* ========== KPIS SHOWCASE ========== */
 /* ========== HERO INSTITUCIONAL ========== */
 .hero-institucional {
+  position: relative;
   width: 100%;
-  background: #F6F8FA;
+  height: 100vh;
+  overflow: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 100px 0 64px 0; /* <-- padding-top igual/maior que a altura do header */
-  border-bottom: 1.5px solid #DFE3E8;
+  padding: 100px 16px 64px 16px;
+  z-index: 1;
+}
+
+.hero-institucional-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  opacity: 0.92;
 }
 
 .hero-institucional-content {
+  position: relative;
+  z-index: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
-  max-width: 680px;
-  width: 100%;
-  gap: 24px;
   text-align: center;
+  max-width: 720px;
+  gap: 24px;
 }
 
 .hero-institucional-logo {
   height: 56px;
-  margin-bottom: 10px;
-}
-
-.hero-institucional-slogan {
-  color: #0033A0;
-  font-family: 'Montserrat', 'Inter', 'Roboto', sans-serif;
-  font-weight: 700;
-  font-size: 1.13rem;
-  letter-spacing: 0.5px;
   margin-bottom: 12px;
 }
 
-.hero-institucional-title {
-  font-family: 'Montserrat', 'Inter', 'Roboto', sans-serif;
-  font-size: 2.7rem;
+.hero-institucional-slogan {
+  font-size: 1.1rem;
+  font-weight: 600;
   color: #0033A0;
+  letter-spacing: 0.5px;
+}
+
+.hero-institucional-title {
+  font-size: 2.7rem;
   font-weight: 800;
-  margin-bottom: 6px;
-  line-height: 1.18;
-  letter-spacing: -1.5px;
+  color: #0033A0;
+  line-height: 1.2;
+  letter-spacing: -1px;
 }
 
 .hero-institucional-subtitle {
-  color: #333333;
-  font-size: 1.33rem;
+  font-size: 1.3rem;
   font-weight: 400;
-  line-height: 1.5;
-  margin-bottom: 24px;
-  font-family: 'Montserrat', 'Inter', 'Roboto', sans-serif;
+  color: #333;
+  line-height: 1.6;
 }
 
 .hero-institucional-cta {
-  background: #3BB273;
+  padding: 1rem 2.4rem;
+  background-color: #3BB273;
   color: #fff;
-  font-size: 1.19rem;
+  font-size: 1.15rem;
   font-weight: 700;
   border: none;
   border-radius: 14px;
-  padding: 1.1rem 2.8rem;
-  box-shadow: 0 3px 16px #3BB27319;
+  box-shadow: 0 3px 16px rgba(59, 178, 115, 0.15);
   cursor: pointer;
-  transition: background 0.16s, transform 0.15s;
-  margin-top: 12px;
+  transition: all 0.2s ease;
 }
+
 .hero-institucional-cta:hover {
-  background: #31925d;
-  transform: translateY(-2px) scale(1.04);
+  background-color: #31925d;
+  transform: scale(1.05) translateY(-2px);
 }
 
 /* Responsivo */
-@media (max-width: 900px) {
-  .hero-institucional { padding: 70px 0 38px 0; }
-  .hero-institucional-title { font-size: 2rem; }
-  .hero-institucional-content { max-width: 99vw; }
+@media (max-width: 768px) {
+  .hero-institucional-title {
+    font-size: 2rem;
+  }
+
+  .hero-institucional-subtitle {
+    font-size: 1.1rem;
+  }
+
+  .hero-institucional-logo {
+    height: 44px;
+  }
 }
-@media (max-width: 600px) {
-  .hero-institucional { padding: 56px 0 18px 0; }
-  .hero-institucional-title { font-size: 1.15rem; }
-  .hero-institucional-logo { height: 38px; }
-  .hero-institucional-subtitle { font-size: 1rem; }
-  .hero-institucional-cta { padding: 0.8rem 1.6rem; font-size: 1.01rem; }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.foundlab-hero {
+  width: 100%;
+  min-height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 100px 16px 64px 16px;
+  position: relative;
+  z-index: 1;
 }
+
+.foundlab-hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 700px;
+  gap: 24px;
+}
+
+.foundlab-hero-logo {
+  height: 56px;
+  margin-bottom: 12px;
+}
+
+.foundlab-hero-slogan {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #0033a0;
+  letter-spacing: 0.4px;
+}
+
+.foundlab-hero-title {
+  font-size: 2.7rem;
+  font-weight: 800;
+  color: #0033a0;
+  line-height: 1.2;
+  letter-spacing: -1px;
+}
+
+.foundlab-hero-subtitle {
+  font-size: 1.3rem;
+  font-weight: 400;
+  color: #333333;
+  line-height: 1.6;
+}
+
+.foundlab-hero-cta {
+  background-color: #3bb273;
+  color: white;
+  font-size: 1.15rem;
+  font-weight: 700;
+  border: none;
+  border-radius: 14px;
+  padding: 1rem 2.4rem;
+  cursor: pointer;
+  box-shadow: 0 3px 16px rgba(59, 178, 115, 0.15);
+  transition: all 0.2s ease;
+}
+
+.foundlab-hero-cta:hover {
+  background-color: #31925d;
+  transform: translateY(-2px) scale(1.05);
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .foundlab-hero-title {
+    font-size: 2rem;
+  }
+
+  .foundlab-hero-subtitle {
+    font-size: 1.1rem;
+  }
+
+  .foundlab-hero-logo {
+    height: 42px;
+  }
+}
+
 
 
 
@@ -1875,7 +2024,6 @@ a:hover {
 
 
 
-
 .como-funciona-section {
   background: #F6F8FA;
   width: 100%;
@@ -1894,33 +2042,49 @@ a:hover {
   letter-spacing: -0.8px;
 }
 
-/* Ajuste para cor branca igual outros cards */
+/* GRID - duas linhas */
+.como-funciona-steps-grid {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+}
+
+.como-funciona-row {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: center;
+  gap: 18px;
+}
+
 .como-funciona-step {
   background: #fff;
   border-radius: 18px;
   border: 1.5px solid #DFE3E8;
   box-shadow: 0 4px 24px 0 #009D9A10, 0 1px 8px #0053B312;
-  padding: 38px 28px 32px 28px;
-  min-width: 255px;
-  max-width: 340px;
+  padding: 26px 14px 20px 14px;
+  min-width: 210px;
+  max-width: 290px;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  gap: 18px;
+  gap: 14px;
   position: relative;
   transition: box-shadow 0.16s, transform 0.16s;
 }
 
 .como-funciona-step:hover {
   box-shadow: 0 8px 44px 0 #009D9A12, 0 3px 14px 0 #0053B315;
-  transform: scale(1.018);
+  transform: scale(1.025);
   z-index: 2;
 }
 
 .como-funciona-icon {
   margin-bottom: 7px;
-  height: 52px;
+  height: 44px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1929,31 +2093,28 @@ a:hover {
 .como-funciona-step-title {
   font-family: 'Montserrat', 'Inter', 'Roboto', sans-serif;
   font-weight: 700;
-  font-size: 1.18rem;
+  font-size: 1.04rem;
   color: #0033A0;
-  margin-bottom: 3px;
-  letter-spacing: -0.3px;
+  margin-bottom: 2px;
+  letter-spacing: -0.2px;
 }
 
 .como-funciona-step-desc {
   color: #333333;
-  font-size: 1.03rem;
+  font-size: 0.97rem;
   font-family: 'Montserrat', 'Inter', 'Roboto', sans-serif;
   font-weight: 400;
   line-height: 1.45;
   margin-bottom: 0;
 }
 
-/* Corrigir seta entre os steps */
 .como-funciona-arrow {
-  position: absolute;
-  right: -22px;  /* Menor distância, evita bug em mobile e overlap */
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 1;
+  align-self: center;
   display: flex;
   align-items: center;
   justify-content: center;
+  margin: 0 6px;
+  position: relative;
 }
 
 .como-funciona-arrow svg {
@@ -1963,43 +2124,49 @@ a:hover {
   padding: 4px;
 }
 
-.como-funciona-steps {
+.como-funciona-arrow-down {
+  margin: 12px 0 6px 0;
+}
+
+.como-funciona-arrow-center {
   display: flex;
-  flex-direction: row;
-  align-items: stretch;
   justify-content: center;
-  gap: 18px; /* Menor gap para caber melhor */
-  max-width: 1100px;
   width: 100%;
-  flex-wrap: nowrap;
+  min-height: 32px;
+  margin: 0;
 }
 
 /* RESPONSIVO */
-@media (max-width: 1100px) {
-  .como-funciona-steps { gap: 10px; }
+@media (max-width: 1050px) {
+  .como-funciona-row {
+    gap: 9px;
+  }
+  .como-funciona-step {
+    min-width: 138px;
+    max-width: 210px;
+    font-size: 0.96rem;
+    padding: 16px 5px 14px 5px;
+  }
+  .como-funciona-step-title { font-size: 0.92rem; }
+  .como-funciona-step-desc { font-size: 0.89rem; }
 }
 
 @media (max-width: 900px) {
-  .como-funciona-steps {
+  .como-funciona-steps-grid, .como-funciona-row {
     flex-direction: column;
-    gap: 30px;
+    gap: 18px;
+    width: 100%;
     align-items: center;
   }
-  .como-funciona-step {
-    min-width: 85vw; max-width: 97vw;
-    margin: 0 auto;
-  }
-  .como-funciona-arrow {
-    position: static;
-    margin: 14px 0 0 0;
-    transform: none;
-    justify-content: center;
-  }
-  .como-funciona-arrow svg {
-    margin: 0 auto;
-  }
+  .como-funciona-arrow-center { display: none; }
 }
 
+/* Extra: Se quiser stack vertical mesmo em telas menores */
+@media (max-width: 700px) {
+  .como-funciona-section { padding: 18px 0 8px 0; }
+  .como-funciona-title { font-size: 1.12rem; }
+  .como-funciona-step { min-width: 0; max-width: 95vw; }
+}
 
 
 
@@ -2229,5 +2396,6 @@ section,
     padding: 18px 8px 14px 8px !important;
   }
 }
+
 
 

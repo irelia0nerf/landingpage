@@ -11,8 +11,8 @@ const diferenciais = [
         <rect x="26" y="26" width="12" height="12" rx="4" fill="#DFE3E8"/>
       </svg>
     ),
-    title: "Modularidade",
-    desc: "Adapte cada módulo de acordo com a necessidade do seu negócio – plug & play, sem lock-in.",
+    title: "Inteligência Preditiva e Adaptativa com IA",
+    desc: "Nosso motor P(x) é o núcleo matemático-probabilístico que calcula riscos e reputação com precisão inédita, utilizando modelagem bayesiana adaptativa. Ele aprende e recalibra em produção, garantindo decisões justificáveis e auditáveis em tempo real.",
   },
   {
     icon: (
@@ -24,8 +24,8 @@ const diferenciais = [
         <circle cx="27" cy="22" r="2.7" fill="#3BB273"/>
       </svg>
     ),
-    title: "Conectividade TradFi/Web3",
-    desc: "Integração pronta para bancos, fintechs e plataformas blockchain – conecte tudo sem atrito.",
+    title: "Infraestrutura Modular e Orquestrada (Plug-and-Play)",
+    desc: "Entregamos uma arquitetura robusta e flexível via APIs e módulos, que se integra sem fricção em qualquer ambiente (TradFi ou Web3). Essa orquestração inteligente garante escalabilidade, alta performance e customização para suas operações críticas.",
   },
   {
     icon: (
@@ -37,8 +37,8 @@ const diferenciais = [
         <rect x="20" y="17" width="4" height="10" rx="1.3" fill="#3BB273"/>
       </svg>
     ),
-    title: "Neutralidade & escalabilidade",
-    desc: "Independência, governança neutra e tecnologia preparada para milhões de usuários.",
+    title: "Conectividade e Credibilidade Unificada (Web2 <> Web3)",
+    desc: "Somos especialistas em unir a análise de risco e reputação de dados on-chain e off-chain. Proporcionamos uma visão holística e sem lacunas da credibilidade do usuário, permitindo operar com segurança e conformidade em toda a economia digital, sem fronteiras.",
   }
 ];
 
