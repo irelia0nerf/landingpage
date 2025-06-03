@@ -17,10 +17,6 @@ const HeroInstitucional = () => (
       <p className="hero-institucional-subtitle">
         A FoundLab opera como uma infraestrutura modular e de alto desempenho, projetada para processamento complexo de risco e reputação. Sua arquitetura é composta por motores interconectados que orquestram fluxos de dados, geram inteligência preditiva e garantem a auditabilidade do processo em tempo real.
       </p>
-
-      <button className="hero-institucional-cta">
-        Solicitar acesso
-      </button>
     </div>
   </section>
 );

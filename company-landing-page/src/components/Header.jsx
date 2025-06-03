@@ -3,6 +3,7 @@ import logo from '../images/logoPreto.png';
 
 const Header = () => {
   const [open, setOpen] = useState(false);
+  const [modalOpen, setModalOpen] = useState(false);
 
   // Fecha menu ao clicar fora (opcional)
   React.useEffect(() => {
@@ -15,6 +16,15 @@ const Header = () => {
       window.removeEventListener('resize', close);
     };
   }, [open]);
+
+  // Fecha modal com Esc
+  React.useEffect(() => {
+    const onKey = (e) => {
+      if (e.key === 'Escape') setModalOpen(false);
+    };
+    if (modalOpen) window.addEventListener('keydown', onKey);
+    return () => window.removeEventListener('keydown', onKey);
+  }, [modalOpen]);
 
   return (
     <header className="header">
@@ -30,9 +40,16 @@ const Header = () => {
         <a href="#como-funciona" className="header-link" onClick={() => setOpen(false)}>Como funciona</a>
         <a href="#kpis" className="header-link" onClick={() => setOpen(false)}>KPIs</a>
         <a href="#sobre-nos" className="header-link" onClick={() => setOpen(false)}>Sobre nós</a>
+        {/* Volta a ser um link normal */}
         <a href="#contato" className="header-link" onClick={() => setOpen(false)}>Contato</a>
       </nav>
-      <button className="cta-button">Solicitar acesso</button>
+      {/* Agora o botão que abre o modal é o "Solicitar acesso" */}
+      <button
+        className="cta-button"
+        onClick={() => setModalOpen(true)}
+      >
+        Solicitar acesso
+      </button>
 
       {/* Botão hambúrguer */}
       <button
@@ -47,6 +64,24 @@ const Header = () => {
 
       {/* Overlay ao abrir menu */}
       {open && <div className="header-overlay" onClick={() => setOpen(false)}></div>}
+
+      {/* Modal de contato */}
+      {modalOpen && (
+        <div className="contato-modal-bg" onClick={() => setModalOpen(false)}>
+          <div className="contato-modal" onClick={e => e.stopPropagation()}>
+            <button className="contato-modal-close" onClick={() => setModalOpen(false)} aria-label="Fechar">×</button>
+            <iframe
+              src="https://tally.so/r/wg18oP"
+              title="Contato"
+              frameBorder="0"
+              width="100%"
+              height="530"
+              style={{ borderRadius: 14, minWidth: 300, background: "#fff" }}
+              allowFullScreen
+            ></iframe>
+          </div>
+        </div>
+      )}
     </header>
   );
 };

@@ -109,20 +109,40 @@ a:hover {
   margin-left: 36px;
   transition: none;
 }
-.header-link {
-  color: #333333;
-  text-decoration: none;
-  font-size: 1.06rem;
+.header-link,
+.header-link:visited {
+  background: none;
+  border: none;
+  outline: none;
+  box-shadow: none;
+  padding: 0 22px;
+  margin: 0;
+  font: inherit;
+  color: #23272F;
   font-weight: 500;
-  transition: color 0.14s, background 0.14s;
-  font-family: 'Inter', 'Montserrat', 'Roboto', Arial, sans-serif;
-  padding: 2px 4px;
-  border-radius: 5px;
+  font-size: 1.11rem;
+  text-decoration: none;
+  cursor: pointer;
+  transition: color 0.18s;
+  opacity: 1;
+  appearance: none;
+  -webkit-appearance: none;
+  /* Remove border no Firefox */
+  border-style: none;
 }
+
 .header-link:hover,
 .header-link:focus {
   color: #0033A0;
-  background: #E1E4E8;
+  text-decoration: underline;
+}
+.header-link:active {
+  color: #0033A0;
+}
+
+.header-link:disabled {
+  opacity: 0.5;
+  pointer-events: none;
 }
 
 /* Botão CTA */
@@ -148,6 +168,7 @@ a:hover {
   background: #4F83CC;
   color: #fff;
 }
+
 
 /* ================== RESPONSIVO ================== */
 @media (max-width: 1024px) {
@@ -2399,3 +2420,44 @@ section,
 
 
 
+.contato-modal-bg {
+  position: fixed;
+  inset: 0;
+  background: rgba(22, 35, 57, 0.36);
+  z-index: 9000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn 0.21s;
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+.contato-modal {
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 8px 64px #0033A044;
+  max-width: 80vh;
+  width: 100vw;
+  padding: 18px 14px 12px 14px;
+  position: relative;
+  animation: popupIn 0.25s cubic-bezier(.41,1.6,.51,.98);
+}
+@keyframes popupIn {
+  from { transform: translateY(30px) scale(0.98); opacity: 0; }
+  to { transform: translateY(0) scale(1); opacity: 1; }
+}
+.contato-modal-close {
+  position: absolute;
+  right: 12px;
+  top: 8px;
+  font-size: 2rem;
+  background: none;
+  border: none;
+  color: #3BB273;
+  cursor: pointer;
+  font-weight: 700;
+  line-height: 1;
+  z-index: 2;
+}
