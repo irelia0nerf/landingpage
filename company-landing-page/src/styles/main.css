@@ -1676,6 +1676,18 @@ a:hover {
   z-index: 1;
 }
 
+/* gradient overlay */
+.hero-institucional::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, rgba(0,0,0,0.3), rgba(0,0,0,0.7));
+  z-index: 0;
+}
+
 .hero-institucional-bg {
   position: absolute;
   top: 0;
@@ -1683,8 +1695,8 @@ a:hover {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  z-index: 0;
-  opacity: 0.92;
+  z-index: -1;
+  filter: brightness(0.6);
 }
 
 .hero-institucional-content {
@@ -1706,14 +1718,14 @@ a:hover {
 .hero-institucional-slogan {
   font-size: 1.1rem;
   font-weight: 600;
-  color: #0033A0;
+  color: #ffffff;
   letter-spacing: 0.5px;
 }
 
 .hero-institucional-title {
   font-size: 2.7rem;
   font-weight: 800;
-  color: #0033A0;
+  color: #ffffff;
   line-height: 1.2;
   letter-spacing: -1px;
 }
@@ -1721,7 +1733,7 @@ a:hover {
 .hero-institucional-subtitle {
   font-size: 1.3rem;
   font-weight: 400;
-  color: #333;
+  color: #f0f0f0;
   line-height: 1.6;
 }
 
