@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Header from './components/Header';
 
 import Footer from './components/Footer';
@@ -28,8 +28,21 @@ import Kpis from './components/Kpis';
 
 
 const App = () => {
+  useEffect(() => {
+    const handleScroll = () => {
+      const y = window.scrollY;
+      const blur1 = document.querySelector('.fancy-bg-blur');
+      const blur2 = document.querySelector('.fancy-bg-blur2');
+      if (blur1) blur1.style.transform = `translateY(${y * 0.2}px)`;
+      if (blur2) blur2.style.transform = `translateY(${-y * 0.15}px)`;
+    };
+    window.addEventListener('scroll', handleScroll);
+    handleScroll();
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
-    <div style={{position: 'relative', minHeight: '100vh', overflow: 'hidden'}}>
+    <div style={{position: 'relative', minHeight: '100vh', overflowX: 'hidden'}}>
       {/* Blobs de background para efeito visual */}
       <div className="fancy-bg-blur" />
       <div className="fancy-bg-blur2" />
